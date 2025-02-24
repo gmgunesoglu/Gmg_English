@@ -1,0 +1,47 @@
+.main_div {
+  display: flex;                  /* Flexbox düzeni başlat */
+  justify-content: space-between; /* Öğeleri yatayda sola ve sağa yasla */
+  align-items: center;            /* Öğeleri dikeyde ortala */
+  height: 100%;
+}
+
+.left-menu, .right-menu {
+  display: flex;
+  align-items: center;
+  justify-self: start;    /* Sola yasla */
+  font-size: 20px;
+  height: 100%;
+}
+
+.left-menu {
+  justify-self: start;    /* Sola yasla */
+}
+
+.right-menu {
+  justify-self: end;    /* Sola yasla */
+}
+
+.menu-ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.menu-ul li {
+  margin-right: 20px;
+  margin-left: 20px;
+  display: flex;
+  padding: 5px 5px;
+  border-radius: 5px;
+}
+
+.menu-ul a {
+  color: #fff;
+  text-decoration: none;
+
+}
+
+.menu-ul li:hover {
+  background-color: #bc1515;
+}

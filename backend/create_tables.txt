@@ -1,0 +1,32 @@
+CREATE TABLE reading_unit (
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(35) NOT NULL
+);
+
+CREATE UNIQUE INDEX reading_unit_ui_1 ON reading_unit (md5(name));
+
+CREATE TABLE reading_text (
+    id SERIAL PRIMARY KEY,
+    reading_unit_id INT NOT NULL,
+    title VARCHAR(70) NOT NULL,
+    context TEXT NOT NULL,
+    FOREIGN KEY (reading_unit_id) REFERENCES reading_unit(id) ON DELETE CASCADE
+);
+
+CREATE UNIQUE INDEX reading_text_ui_1 ON reading_text (md5(context));
+CREATE UNIQUE INDEX reading_text_ui_2 ON reading_text (reading_unit_id, md5(title));
+
+CREATE TABLE reading_quest (
+    id SERIAL PRIMARY KEY,
+    reading_text_id INT NOT NULL,
+    quest VARCHAR(400) NOT NULL,
+    option_a VARCHAR(100) NOT NULL,
+    option_b VARCHAR(100) NOT NULL,
+    option_c VARCHAR(100) NOT NULL,
+    option_d VARCHAR(100) NOT NULL,
+    correct_option CHAR(1) NOT NULL,
+    justification VARCHAR(500) NOT NULL,
+    FOREIGN KEY (reading_text_id) REFERENCES reading_text(id) ON DELETE CASCADE
+);
+
+CREATE UNIQUE INDEX reading_quest_ui_1 ON reading_quest (reading_text_id, md5(quest));

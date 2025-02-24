@@ -1,0 +1,25 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
+.base-grid {
+  display: grid;
+  grid-template-rows: 1fr 10fr 1fr;
+  height: 100vh;
+  width: 100vw;
+}
+
+.base-header-div, .base-footer-div {
+  background-color: #333;
+  align-items: stretch; /* Yükseklik tamamen doldurulacak */
+  //display: flex;
+  align-items: center;
+}
+
+.base-rooter-div {
+  background: antiquewhite;
+}
+

@@ -1,0 +1,39 @@
+-- reading_unit
+INSERT INTO reading_unit (name)
+VALUES
+    ('Unit 1'),
+    ('Unit 2');
+
+
+-- reading_text
+INSERT INTO reading_text (reading_unit_id, title, context) VALUES
+    (1, 'Title 1', 'Sample context for text 1 unit 1'),
+    (1, 'Title 2', 'Sample context for text 2 unit 1'),
+    (2, 'Title 1', 'Sample context for text 3 unit 2'),
+    (2, 'Title 2', 'Sample context for text 4 unit 2');
+
+
+-- reading_quest
+INSERT INTO reading_quest (reading_text_id, quest, option_a, option_b, option_c, option_d, correct_option, justification)
+VALUES
+    (1, 'What is the capital of France?', 'Paris', 'London', 'Berlin', 'Madrid', 'A', 'Paris is the capital of France.'),
+    (1, 'What is the capital of Germany?', 'Paris', 'London', 'Berlin', 'Madrid', 'C', 'Berlin is the capital of Germany.'),
+    (1, 'What is the capital of Italy?', 'Rome', 'Venice', 'Milan', 'Naples', 'A', 'Rome is the capital of Italy.'),
+    (1, 'Which planet is known as the Red Planet?', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'B', 'Mars is known as the Red Planet.'),
+    (1, 'What is the largest ocean on Earth?', 'Atlantic Ocean', 'Indian Ocean', 'Southern Ocean', 'Pacific Ocean', 'D', 'The Pacific Ocean is the largest ocean on Earth.'),
+    (2, 'Who wrote the play "Romeo and Juliet"?', 'Charles Dickens', 'William Shakespeare', 'Jane Austen', 'Mark Twain', 'B', 'William Shakespeare wrote the play "Romeo and Juliet."'),
+    (2, 'What is the largest animal on Earth?', 'Elephant', 'Whale', 'Giraffe', 'Shark', 'B', 'The whale is the largest animal on Earth.'),
+    (2, 'Which country is famous for the Great Wall?', 'China', 'Japan', 'India', 'South Korea', 'A', 'The Great Wall is famous in China.'),
+    (2, 'What is the smallest continent?', 'Europe', 'Asia', 'Australia', 'Africa', 'C', 'Australia is the smallest continent.'),
+    (2, 'Which element has the chemical symbol "O"?', 'Oxygen', 'Osmium', 'Ozone', 'Oganesson', 'A', 'Oxygen has the chemical symbol "O."'),
+    (3, 'Who is the first President of the United States?', 'Abraham Lincoln', 'George Washington', 'Thomas Jefferson', 'John Adams', 'B', 'George Washington was the first President of the United States.'),
+    (3, 'What is the longest river in the world?', 'Amazon River', 'Nile River', 'Yangtze River', 'Mississippi River', 'B', 'The Nile River is considered the longest river in the world.'),
+    (3, 'Which is the largest desert in the world?', 'Sahara Desert', 'Kalahari Desert', 'Gobi Desert', 'Antarctic Desert', 'D', 'The Antarctic Desert is the largest desert in the world.'),
+    (3, 'What is the hardest natural substance on Earth?', 'Gold', 'Diamond', 'Iron', 'Platinum', 'B', 'Diamond is the hardest natural substance on Earth.'),
+    (3, 'Which bird is known for its ability to mimic human speech?', 'Parrot', 'Sparrow', 'Eagle', 'Crow', 'A', 'Parrots are known for mimicking human speech.'),
+    (4, 'Who invented the telephone?', 'Thomas Edison', 'Nikola Tesla', 'Alexander Graham Bell', 'Marie Curie', 'C', 'Alexander Graham Bell invented the telephone.'),
+    (4, 'What is the main ingredient in guacamole?', 'Tomato', 'Avocado', 'Onion', 'Cilantro', 'B', 'Avocado is the main ingredient in guacamole.'),
+    (4, 'What is the tallest mountain in the world?', 'Mount Kilimanjaro', 'Mount Everest', 'Mount Fuji', 'Mount McKinley', 'B', 'Mount Everest is the tallest mountain in the world.'),
+    (4, 'Which ocean is located between Africa and Australia?', 'Atlantic Ocean', 'Indian Ocean', 'Pacific Ocean', 'Southern Ocean', 'B', 'The Indian Ocean is located between Africa and Australia.'),
+    (4, 'What is the national sport of Japan?', 'Sumo Wrestling', 'Karate', 'Judo', 'Baseball', 'A', 'Sumo Wrestling is the national sport of Japan.');
+
