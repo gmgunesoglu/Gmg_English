@@ -5,7 +5,7 @@
   height: 100%;
 }
 
-.left-menu, .right-menu {
+.menu, .bottom-menu {
   display: flex;
   align-items: center;
   justify-self: start;    /* Sola yasla */
@@ -13,11 +13,11 @@
   height: 100%;
 }
 
-.left-menu {
+.menu {
   justify-self: start;    /* Sola yasla */
 }
 
-.right-menu {
+.bottom-menu {
   justify-self: end;    /* Sola yasla */
 }
 

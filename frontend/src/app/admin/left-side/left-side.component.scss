@@ -1,0 +1,40 @@
+.menu {
+  display: flex;
+  font-size: 20px;
+  width: 100%;
+  justify-self: start;
+  flex-direction: column; /* Dikey hizalama için */
+
+}
+
+.menu-ul {
+  margin: 0;  /* Listenin çevresindeki varsayılan boşluğu kaldırır */
+  padding: 0; /* Listenin iç kenarlarındaki boşluğu kaldırır */
+  display: flex;
+  flex-direction: column; /* Dikey hizalama için */
+  width: 97%;
+  background: #333333;
+}
+
+.menu-ul li {
+  display: flex;
+  margin: 4px;
+  padding: 5px 5px;
+  border-radius: 5px;
+  //border-width: 5px;
+  //border-style: solid;
+  background: #101010;
+}
+.menu-ul ul:first-child {
+  margin: 40px;
+}
+
+
+.menu-ul a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.menu-ul li:hover {
+  background-color: #333333;
+}

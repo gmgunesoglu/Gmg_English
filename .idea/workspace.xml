@@ -4,12 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/backend/routers/reading_text.py" afterDir="false" />
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="file struct problem fixed">
+      <change afterPath="$PROJECT_DIR$/backend/routers/reading_quest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/reading_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routers/reading_unit.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_unit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whisper_model/model_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_model/model_app.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +59,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="43278b4b9f9c72b54f3a90d09691ca55d6f20930" />
+        <entry key="$PROJECT_DIR$" value="master" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -101,7 +102,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/Gmg_English&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/Gmg_English/frontend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -171,12 +172,6 @@
       <item itemvalue="Python.main" />
       <item itemvalue="Python.model_app" />
     </list>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Python.main" />
-        <item itemvalue="Python.model_app" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -197,6 +192,7 @@
       <workItem from="1740260224128" duration="4980000" />
       <workItem from="1740291980149" duration="11307000" />
       <workItem from="1740420936328" duration="6437000" />
+      <workItem from="1740500543601" duration="94000" />
     </task>
     <task id="LOCAL-00001" summary="readme added">
       <created>1740428810588</created>
@@ -226,7 +222,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740431477509</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="faced some problems about file struct">
+      <option name="closed" value="true" />
+      <created>1740485034998</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740485034998</updated>
+    </task>
+    <task id="LOCAL-00006" summary="file struct problem fixed">
+      <option name="closed" value="true" />
+      <created>1740485324670</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740485324670</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -258,6 +270,15 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="readme added" />
     <MESSAGE value="frontend-problem" />
-    <option name="LAST_COMMIT_MESSAGE" value="frontend-problem" />
+    <MESSAGE value="faced some problems about file struct" />
+    <MESSAGE value="file struct problem fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="file struct problem fixed" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="PythonConfigurationType">
+        <watch expression="e.orig" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>
