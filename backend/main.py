@@ -1,9 +1,9 @@
 from contextlib import asynccontextmanager
-
 import uvicorn
 from fastapi import FastAPI
-from database import init_db
-from routers import reading_unit
+
+from backend.database import init_db
+from backend.routers import reading_unit
 
 
 @asynccontextmanager
