@@ -6,11 +6,6 @@ import torch
 from collections import deque
 
 
-print(torch.__version__)
-print(torch.cuda.is_available())
-print(torch.cuda.device_count())
-print(torch.cuda.get_device_name(0) if torch.cuda.is_available() else "GPU Yok")
-
 # Whisper modelini yükleyin (GPU kullanımı için cuda ile çalıştırın)
 device = "cuda"
 if not torch.cuda.is_available():

@@ -29,16 +29,20 @@ class ReadingUnitGets(BaseModel):
     name: str
     titles: List[ReadingTextBase]
 
-# DELETE admin/readings/units/{id} (NoBody!) id -> string
+# DELETE readings/units/{id} (NoBody!) id -> string
 
 
+# GET readings/texts
+class ReadingTextGets(BaseModel):
+    id: int
+    unit: str
+    title: str
 
 
-
-# POST admin/readings/texts: ReadingTextCreate -> ReadingTextGet
+# POST readings/texts: ReadingTextCreate -> ReadingTextGets
 class ReadingTextCreate(BaseModel):
     unit_id: int
-    subject: str
+    title: str
     context: str
 
 # GET readings/texts -> ReadingTextGet

@@ -1,10 +1,9 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.exc import IntegrityError
-from sqlalchemy.sql.coercions import expect
 from sqlmodel import Session, select
-from database import get_session
-from models import ReadingUnit
-from schemas import ReadingUnitGets, ReadingUnitCreate, ReadingTextBase
+from backend.database import get_session
+from backend.models import ReadingUnit
+from backend.schemas import ReadingUnitGets, ReadingUnitCreate, ReadingTextBase
 from typing import List
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
