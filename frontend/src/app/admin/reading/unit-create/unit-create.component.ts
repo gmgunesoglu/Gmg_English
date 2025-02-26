@@ -1,0 +1,36 @@
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+
+@Component({
+  selector: 'app-unit-create',
+  templateUrl: './unit-create.component.html',
+  styleUrls: ['./unit-create.component.scss']
+})
+export class UnitCreateComponent {
+
+  constructor(private http: HttpClient) {}
+
+  newUnitName: string = "";
+
+
+
+
+  createNewUnit(): void {
+    if (!this.newUnitName.trim()) return;
+    const payload = { title: this.newUnitName };
+    this.http.post('http://localhost:8000/readings/units', payload).subscribe(
+      () => {
+        this.newUnitName = '';
+        // this.fetchUnits();
+      },
+      (error) => console.error('Error creating title:', error)
+    );
+  }
+
+  @Output()
+  cancelCreate: EventEmitter<void> = new EventEmitter<void>();
+
+  cancelCreatNewUnit() {
+    this.cancelCreate.emit()
+  }
+}

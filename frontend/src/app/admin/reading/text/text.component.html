@@ -1,0 +1,22 @@
+<div class="text-container">
+  <button (click)="closeText()">Back</button>
+
+  <h2>{{ text.title }}</h2>
+  <p><strong>Unit:</strong> {{ text.unit_name }}</p>
+  <p><strong>Context:</strong> {{ text.context }}</p>
+
+  <h3>Quests</h3>
+  <ul>
+    <li *ngFor="let quest of text.quests">
+      <strong>{{ quest.quest }}</strong>
+      <ul>
+        <li>A) {{ quest.option_a }}</li>
+        <li>B) {{ quest.option_b }}</li>
+        <li>C) {{ quest.option_c }}</li>
+        <li>D) {{ quest.option_d }}</li>
+      </ul>
+      <p><strong>Correct Answer:</strong> {{ quest.correct_option }}</p>
+      <p><strong>Justification:</strong> {{ quest.justification }}</p>
+    </li>
+  </ul>
+</div>
