@@ -12,18 +12,16 @@ export class UnitCreateComponent {
 
   newUnitName: string = "";
 
-
-
-
   createNewUnit(): void {
     if (!this.newUnitName.trim()) return;
     const payload = { title: this.newUnitName };
-    this.http.post('http://localhost:8000/readings/units', payload).subscribe(
-      () => {
+    this.http.post<string>('http://localhost:8000/readings/units', payload).subscribe(
+      (message) => {
         this.newUnitName = '';
         // this.fetchUnits();
+        alert(message); // Gelen mesajı bir uyarı olarak göster
       },
-      (error) => console.error('Error creating title:', error)
+      (error) =>  alert(error.error.detail)
     );
   }
 
@@ -33,4 +31,5 @@ export class UnitCreateComponent {
   cancelCreatNewUnit() {
     this.cancelCreate.emit()
   }
+
 }

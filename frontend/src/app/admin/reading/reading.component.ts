@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 
 interface Title {
   id: number;
@@ -118,6 +119,32 @@ export class ReadingComponent implements OnInit {
   // Unit silme
   deleteUnit(unit: Unit): void {
     console.log('Deleting unit: ', unit);
-    // Silme işlemi
+    this.http.delete<string>(`http://localhost:8000/readings/units/${unit.id}`).subscribe(
+      (message) => {
+        console.log('Server response:', message);
+        this.fetchUnits()
+        alert(message); // Gelen mesajı bir uyarı olarak göster
+      },
+      (error) => console.error('Error fetching text:', error)
+    );
+  }
+
+  drop(event: CdkDragDrop<any[]>, targetUnit: any) {
+    const previousUnit = this.filteredUnits.find(unit => unit.titles === event.previousContainer.data);
+
+    if (!previousUnit) return;
+
+    if (event.previousContainer === event.container) {
+      // Aynı unit içinde sıralama değişikliği
+      moveItemInArray(targetUnit.titles, event.previousIndex, event.currentIndex);
+    } else {
+      // Başka bir unit'e taşıma işlemi
+      transferArrayItem(
+        event.previousContainer.data, // Kaynak unit'in titles listesi
+        event.container.data, // Hedef unit'in titles listesi
+        event.previousIndex,
+        event.currentIndex
+      );
+    }
   }
 }

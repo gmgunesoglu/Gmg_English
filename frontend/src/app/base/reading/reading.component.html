@@ -2,16 +2,16 @@
 
   <div [ngClass]="{ 'result-off': !outputText, 'result-on': outputText }">
     <div class="reading-container">
-    <textarea
-      [(ngModel)]="inputText"
-      placeholder=""
-      class="input-textarea"
-    ></textarea>
-      <div class="reading-container-buttons">
-        <button class="submit-btn" (click)="updateText()">Process</button>
-        <button class="submit-btn">Check Reading</button>
-        <button class="submit-btn" (click)="deleteText()" >Clear</button>
-      </div>
+      <textarea
+        [(ngModel)]="inputText"
+        placeholder=""
+        class="input-textarea"
+      ></textarea>
+        <div class="reading-container-buttons">
+          <button class="submit-btn" (click)="updateText()">Process</button>
+          <button class="submit-btn">Check Reading</button>
+          <button class="submit-btn" (click)="deleteText()" >Clear</button>
+        </div>
     </div>
     <div class="result-container">
       <pre rows="5">{{ outputText }}</pre>
