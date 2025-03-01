@@ -1,6 +1,11 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
+interface Unit {
+  id: number;
+  name: string;
+}
+
 @Component({
   selector: 'app-unit-create',
   templateUrl: './unit-create.component.html',
@@ -9,24 +14,24 @@ import { HttpClient } from '@angular/common/http';
 export class UnitCreateComponent {
 
   constructor(private http: HttpClient) {}
-
   newUnitName: string = "";
+
+  @Output() continueCreate: EventEmitter<Unit> = new EventEmitter<Unit>();
+  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
 
   createNewUnit(): void {
     if (!this.newUnitName.trim()) return;
     const payload = { title: this.newUnitName };
-    this.http.post<string>('http://localhost:8000/readings/units', payload).subscribe(
-      (message) => {
+    this.http.post<Unit>('http://localhost:8000/readings/units', payload).subscribe(
+      (unit) => {
         this.newUnitName = '';
         // this.fetchUnits();
-        alert(message); // Gelen mesajı bir uyarı olarak göster
+        // alert(message); // Gelen mesajı bir uyarı olarak göster
+        this.continueCreate.emit(unit)
       },
       (error) =>  alert(error.error.detail)
     );
   }
-
-  @Output()
-  cancelCreate: EventEmitter<void> = new EventEmitter<void>();
 
   cancelCreatNewUnit() {
     this.cancelCreate.emit()

@@ -1,10 +1,10 @@
-<div class="center_div">
-  <div class="listing-units" *ngIf="!isCreatingUnit">
+<div class="center-div">
+  <div class="listing-units" *ngIf="isListingUnits">
 
     <div class="listing-bar">
       <input type="text" placeholder="Unit name starts..." [(ngModel)]="unitStart" (keyup)="filterUnitsWithUnitNameAndTitle()">
       <input type="text" placeholder="Title starts..." [(ngModel)]="titleStart" (keyup)="filterUnitsWithUnitNameAndTitle()">
-      <button (click)="toggleForm()">Create New</button>
+      <button (click)="openFormCreatingUnit()">Create New</button>
       <!--      <button (click)="filterUnitsWithUnitNameAndTitle()">Search</button>-->
     </div>
 
@@ -14,18 +14,25 @@
           <div class="unit-header">
             <h2 class="unit-name">{{ unit.name }}</h2>
             <div class="unit-buttons">
+              <button class="unit-button" (click)="viewUnitDetails(unit)">Add-Text</button>
               <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
               <button class="unit-button" (click)="updateUnit(unit)">Update</button>
               <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
-              <button *ngIf="unit.showTitles" class="unit-button" (click)="toggleTitles(unit, i)">Open</button>
-              <button *ngIf="!unit.showTitles" class="unit-button" (click)="toggleTitles(unit, i)">Close</button>
+              <button *ngIf="unit.showTitles" class="unit-button" (click)="closeTitles(unit, i)">Close</button>
+              <button *ngIf="!unit.showTitles" class="unit-button" (click)="openTitles(unit, i)">Open</button>
             </div>
           </div>
 
           <ul *ngIf="unit.showTitles" class="title-list" cdkDropList [cdkDropListData]="unit.titles"
               (cdkDropListDropped)="drop($event, unit)">
             <li *ngFor="let title of unit.titles" class="title-item" cdkDrag>
-              <span class="title-text">{{ title.title }}</span>
+              <span>{{ title.title }}</span>
+              <div class="unit-buttons">
+                <button class="unit-button" (click)="viewUnitDetails(unit)">Add Text</button>
+                <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
+                <button class="unit-button" (click)="updateUnit(unit)">Update</button>
+                <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
+              </div>
             </li>
           </ul>
         </li>
@@ -34,11 +41,20 @@
 <!--    <app-text-component *ngIf="selectedText" [text]="selectedText" (close)="selectedText = null"></app-text-component>-->
   </div>
 
-
   <div *ngIf="isCreatingUnit">
 <!--    <input [(ngModel)]="newUnitName" placeholder="Enter title">-->
 <!--    <button (click)="createNew()">Save</button>-->
 <!--    <button (click)="cancelCreatingNewUnit()">Back</button>-->
-    <app-unit-create (cancelCreate)="cancelCreatingNewUnit()"></app-unit-create>
+    <app-unit-create
+      (cancelCreate)="cancelCreatingNewUnit()"
+      (continueCreate)="createText($event)"
+    ></app-unit-create>
   </div>
+
+  <div *ngIf="isCreatingText" class="child-container">
+    <app-text-create
+      [unit]="create_text_unit"
+    ></app-text-create>
+  </div>
+
 </div>

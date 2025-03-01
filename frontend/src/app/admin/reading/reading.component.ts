@@ -33,6 +33,11 @@ interface TextData {
   quests: Quest[];
 }
 
+interface CreateTextUnit {
+  id: number;
+  name: string;
+}
+
 
 @Component({
   selector: 'app-reading',
@@ -42,12 +47,16 @@ interface TextData {
 export class ReadingComponent implements OnInit {
   filteredUnits: Unit[] = [];
   units: Unit[] = [];
-  showForm: boolean = false;
   selectedText: TextData | null = null;
   isListingUnits: boolean = true
+  isCreatingText: boolean = false
   unitStart: string = ""
   titleStart: string = ""
   isCreatingUnit: boolean = false
+  create_text_unit: CreateTextUnit = {
+    id: 0,
+    name: ""
+  }
 
   constructor(private http: HttpClient) {}
 
@@ -74,8 +83,10 @@ export class ReadingComponent implements OnInit {
     );
   }
 
-  toggleForm(): void {
+  openFormCreatingUnit(): void {
     this.isCreatingUnit = true;
+    this.isListingUnits = false
+    this.isCreatingText = false;
   }
 
   loadText(titleId: number): void {
@@ -94,14 +105,20 @@ export class ReadingComponent implements OnInit {
   }
 
   cancelCreatingNewUnit() {
-    this.isCreatingUnit = false
+    this.isCreatingUnit = false;
+    this.isListingUnits = true;
+    this.isCreatingText = false;
   }
 
 
   // Title'ları açma ve kapama işlevi
-  toggleTitles(unit: Unit, i: number): void {
-    unit.showTitles = !unit.showTitles;
-    this.units[i].showTitles = unit.showTitles
+  openTitles(unit: Unit, i: number): void {
+    unit.showTitles = true;
+    this.units[i].showTitles = true;
+  }
+  closeTitles(unit: Unit, i: number): void {
+    unit.showTitles = false;
+    this.units[i].showTitles = false;
   }
 
   // Unit detayları gösterme
@@ -146,5 +163,12 @@ export class ReadingComponent implements OnInit {
         event.currentIndex
       );
     }
+  }
+
+  createText(unit: CreateTextUnit) {
+    this.create_text_unit = unit
+    this.isListingUnits = false;
+    this.isCreatingUnit = false;
+    this.isCreatingText = true;
   }
 }

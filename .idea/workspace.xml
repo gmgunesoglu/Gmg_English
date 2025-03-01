@@ -4,8 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="I will add drag-drop on admin/readings">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/reading_unit.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_unit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/schemas.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,7 +278,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740680239258</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations">
+      <option name="closed" value="true" />
+      <created>1740775176875</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1740775176875</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -307,7 +323,8 @@
     <MESSAGE value="backend is ready for reading services in basic level. Frontend needs to more attention." />
     <MESSAGE value="Some works in frontend..." />
     <MESSAGE value="I will add drag-drop on admin/readings" />
-    <option name="LAST_COMMIT_MESSAGE" value="I will add drag-drop on admin/readings" />
+    <MESSAGE value="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations" />
+    <option name="LAST_COMMIT_MESSAGE" value="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

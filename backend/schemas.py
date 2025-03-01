@@ -25,8 +25,11 @@ class OptionType(Enum):
     D = "D"
 
 
+class ReadingUnitBase(BaseModel):
+    id: int
+    name: str
 
-# POST readings/units: ReadingUnitCreate -> string
+# POST readings/units: ReadingUnitCreate -> ReadingUnitBase
 # PUT readings/units/{id}: ReadingUnitCreate + id -> string
 class ReadingUnitCreate(BaseModel):
     title: constr(min_length=1, max_length=35)

@@ -12,6 +12,7 @@ import {FormsModule} from "@angular/forms";
 import { TextComponent } from './reading/text/text.component';
 import { UnitComponent } from './reading/unit/unit.component';
 import { UnitCreateComponent } from './reading/unit-create/unit-create.component';
+import { TextCreateComponent } from './reading/text-create/text-create.component';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { UnitCreateComponent } from './reading/unit-create/unit-create.component
     HomeComponent,
     TextComponent,
     UnitComponent,
-    UnitCreateComponent
+    UnitCreateComponent,
+    TextCreateComponent
   ],
   imports: [
     CommonModule,

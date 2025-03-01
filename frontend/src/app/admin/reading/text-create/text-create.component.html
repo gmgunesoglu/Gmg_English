@@ -1,0 +1,15 @@
+<div class="text-create-container">
+  <form (ngSubmit)="postText()">
+    <div>
+      <label>Title:</label>
+      <input id="title" type="text" [(ngModel)]="createText.title" name="title" required placeholder="Enter a title">
+    </div>
+
+    <div>
+      <label for="context">Context:</label>
+      <textarea id="context" [(ngModel)]="createText.context" name="context" required placeholder="Enter context..."></textarea>
+    </div>
+
+    <button type="submit">Create</button>
+  </form>
+</div>

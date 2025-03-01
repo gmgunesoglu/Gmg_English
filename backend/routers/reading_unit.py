@@ -5,7 +5,7 @@ from typing import List
 
 from backend.database import get_session
 from backend.models import ReadingUnit
-from backend.schemas import ReadingUnitGets, ReadingUnitCreate, ReadingTextBase
+from backend.schemas import ReadingUnitGets, ReadingUnitCreate, ReadingTextBase, ReadingUnitBase
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
 
@@ -23,7 +23,7 @@ async def get_reading_units(session: Session = Depends(get_session)):
         for unit in units
     ]
 
-@router.post("/", response_model=str)
+@router.post("/", response_model=ReadingUnitBase)
 async def create_reading_unit(data: ReadingUnitCreate, session: Session = Depends(get_session)):
     new_unit = ReadingUnit(name=data.title)
     try:
@@ -33,7 +33,8 @@ async def create_reading_unit(data: ReadingUnitCreate, session: Session = Depend
     except IntegrityError as e:
         print(f"400 [-] IntegrityError: {e}")
         raise HTTPException(status_code=400, detail=f"IntegrityError: {e}")
-    return f"Unit '{new_unit.name}' created successfully!"
+    return ReadingUnit(id=new_unit.id, name=new_unit.name)
+    # return f"Unit '{new_unit.name}' created successfully!"
 
 @router.put("/{reading_unit_id}", response_model=str)
 async def update_reading_unit(reading_unit_id: int, data: ReadingUnitCreate, session: Session = Depends(get_session)):
