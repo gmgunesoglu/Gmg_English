@@ -1,10 +1,4 @@
-app-text-create {
-  display: block; /* Varsayılan inline behavior'ı kır */
-  width: 100%;   /* Genişliği tamamen kapla */
-  height: 100%;  /* Yüksekliği tamamen kapla */
-}
-
-.text-create-container {
+  .text-create-container {
   display: flex;
   flex-direction: column;
   align-items: center;

@@ -51,10 +51,10 @@
     ></app-unit-create>
   </div>
 
-  <div *ngIf="isCreatingText" class="child-container">
-    <app-text-create
+<!--  <div *ngIf="isCreatingText" class="child-container">-->
+    <app-text-create *ngIf="isCreatingText"
       [unit]="create_text_unit"
     ></app-text-create>
-  </div>
+<!--  </div>-->
 
 </div>
