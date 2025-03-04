@@ -40,29 +40,24 @@ export class TextCreateComponent {
   }
 
   @Output() continueCreate: EventEmitter<CreatedText> = new EventEmitter<CreatedText>();
+  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
 
-  postText(): void {
+  createNewText(): void {
     this.createText.unit_id = this.unit.id
-    this.http.post<CreatedText>('http://localhost:8000/readings/texts', this.continueCreate).subscribe(
+    this.http.post<CreatedText>('http://localhost:8000/readings/texts', this.createText).subscribe(
       (created_text) => {
-        this.createdText = created_text
-        this.continueCreate.emit(created_text)
+        // this.createdText = created_text
+        this.continueCreate.emit(created_text);
+
       },
-      (error) =>  alert(error.error)
+      (error) => {
+        alert(error.error);
+        console.log(error);
+      }
     );
   }
 
-  // createText(): void {
-  //   const payload = {
-  //     unit_id: this.unit.id,  // ID'yi formdan değil, @Input() unit.id'den alıyoruz.
-  //     ...this.textData
-  //   };
-  //
-  //   this.http.post('http://localhost:8000/readings/texts', payload).subscribe(
-  //     response => console.log('Başarılı:', response),
-  //     error => alert(error.error)
-  //   );
-  // }
-
-
+  cancelCreateNewText() {
+    this.cancelCreate.emit();
+  }
 }

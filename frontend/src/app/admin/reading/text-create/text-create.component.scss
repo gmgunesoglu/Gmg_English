@@ -1,67 +1,53 @@
-  .text-create-container {
+.text-create-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
-  height: 100%; /* Burası çok önemli */
-  background-color: lightblue; /* Test için ekleyelim */
-}
-
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
   height: 100%;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  padding: 10px;
+  overflow: hidden;
 }
 
-
-/* Form container - İçeriği yay */
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; /* Boşlukları yay */
-  align-items: center;
-  height: 100%; /* %100 alan kaplamalı */
-  width: 100%;
-  flex-grow: 1;
+.title-container,
+.context-container,
+.buttons-div {
+  align-self: stretch;
+  margin: 10px;
+  overflow: hidden;
 }
 
 /* Input ve textarea kapsayıcıları */
 .title-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  //width: 100%;
+  //flex-grow: 1;
 }
 .context-container {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  //width: 100%;
   flex-grow: 1; /* Boşluğu kaplaması için */
 }
 
-/* Input ve textarea */
-input, textarea {
-  width: 100%;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  font-size: 16px;
-}
+//input, textarea {
+//  width: 100%;
+//  padding: 10px;
+//  border: 1px solid #ccc;
+//  border-radius: 5px;
+//  font-size: 16px;
+//}
 
 textarea {
   resize: none;
-  flex-grow: 1; /* Textarea tamamen yayılmalı */
-  min-height: 150px;
+  flex-grow: 1;
 }
 
-/* Buton */
 button {
-  width: 100%;
-  padding: 12px;
-  background-color: #28a745;
+  background-color: #28a772;
   color: white;
   border: none;
   border-radius: 5px;
@@ -69,6 +55,32 @@ button {
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #218838;
+.buttons-div {
+  display: flex;
+  justify-content: space-between;
+  //width: 100%;
 }
+
+.buttons-div button {
+  flex: 1; /* Butonların eşit genişlikte yayılmasını sağlar */
+  margin: 0 5px; /* Butonlar arasında boşluk bırakır */
+}
+
+button:hover {
+  background-color: #006418;
+}
+
+button,
+label {
+  font-family: "Arial", sans-serif;
+  font-size: 20px;
+}
+
+
+input,
+textarea {
+  font-family: "Calibri", sans-serif;
+  font-size: 18px;
+}
+
+

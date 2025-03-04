@@ -14,7 +14,7 @@
           <div class="unit-header">
             <h2 class="unit-name">{{ unit.name }}</h2>
             <div class="unit-buttons">
-              <button class="unit-button" (click)="viewUnitDetails(unit)">Add-Text</button>
+              <button class="unit-button" (click)="createText(unit)">Add-Text</button>
               <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
               <button class="unit-button" (click)="updateUnit(unit)">Update</button>
               <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
@@ -28,10 +28,9 @@
             <li *ngFor="let title of unit.titles" class="title-item" cdkDrag>
               <span>{{ title.title }}</span>
               <div class="unit-buttons">
-                <button class="unit-button" (click)="viewUnitDetails(unit)">Add Text</button>
                 <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
                 <button class="unit-button" (click)="updateUnit(unit)">Update</button>
-                <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
+                <button class="unit-button" (click)="deleteText(title)">Delete</button>
               </div>
             </li>
           </ul>
@@ -46,14 +45,16 @@
 <!--    <button (click)="createNew()">Save</button>-->
 <!--    <button (click)="cancelCreatingNewUnit()">Back</button>-->
     <app-unit-create
-      (cancelCreate)="cancelCreatingNewUnit()"
+      (cancelCreate)="listUnits()"
       (continueCreate)="createText($event)"
     ></app-unit-create>
   </div>
 
 <!--  <div *ngIf="isCreatingText" class="child-container">-->
-    <app-text-create *ngIf="isCreatingText"
-      [unit]="create_text_unit"
+    <app-text-create *ngIf="isCreatingText" class="child-app"
+                     [unit]="create_text_unit"
+                     (cancelCreate)="listUnits()"
+                     (continueCreate)="stopCreating($event)"
     ></app-text-create>
 <!--  </div>-->
 

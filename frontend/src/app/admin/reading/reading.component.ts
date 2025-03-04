@@ -14,6 +14,12 @@ interface Unit {
   showTitles: boolean;
 }
 
+interface CreatedText {
+  "id": number,
+  "unit_name": string,
+  "title": string
+}
+
 interface Quest {
   id: number;
   quest: string;
@@ -104,7 +110,7 @@ export class ReadingComponent implements OnInit {
       }));
   }
 
-  cancelCreatingNewUnit() {
+  listUnits() {
     this.isCreatingUnit = false;
     this.isListingUnits = true;
     this.isCreatingText = false;
@@ -165,10 +171,27 @@ export class ReadingComponent implements OnInit {
     }
   }
 
-  createText(unit: CreateTextUnit) {
+  createText(unit: CreateTextUnit | Unit) {
     this.create_text_unit = unit
     this.isListingUnits = false;
     this.isCreatingUnit = false;
     this.isCreatingText = true;
+  }
+
+  stopCreating($event: CreatedText) {
+    this.fetchUnits()
+    this.listUnits()
+  }
+
+  deleteText(title: Title) {
+    console.log('Deleting title: ', title);
+    this.http.delete<string>(`http://localhost:8000/readings/texts/${title.id}`).subscribe(
+      (message) => {
+        console.log('Server response:', message);
+        this.fetchUnits()
+        alert(message); // Gelen mesajı bir uyarı olarak göster
+      },
+      (error) => console.error('Error fetching text:', error)
+    );
   }
 }

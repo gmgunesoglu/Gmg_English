@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some updates">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some updates on frontend">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,7 +286,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740854684832</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Some updates on frontend">
+      <option name="closed" value="true" />
+      <created>1741023140776</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741023140776</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -328,7 +333,8 @@
     <MESSAGE value="I will add drag-drop on admin/readings" />
     <MESSAGE value="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations" />
     <MESSAGE value="Some updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some updates" />
+    <MESSAGE value="Some updates on frontend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Some updates on frontend" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
