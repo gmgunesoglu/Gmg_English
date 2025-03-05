@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some updates on frontend">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some updates on frontend...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +97,7 @@
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/Gmg_English/frontend&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/NewMindBootCampQuests&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -294,7 +294,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741023140776</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Some updates on frontend...">
+      <option name="closed" value="true" />
+      <created>1741114740066</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741114740066</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -334,7 +342,8 @@
     <MESSAGE value="I did some research about RAG, Semantic Layer, Fine-Tuning and LLM Hallucinations" />
     <MESSAGE value="Some updates" />
     <MESSAGE value="Some updates on frontend" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some updates on frontend" />
+    <MESSAGE value="Some updates on frontend..." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some updates on frontend..." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
