@@ -7,7 +7,7 @@ import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ReadingComponent } from './reading/reading.component';
-import { RightSideComponent } from './right-side/right-side.component';
+import { UnitComponent } from './unit/unit.component';
 import {FormsModule} from "@angular/forms";
 
 
@@ -18,7 +18,7 @@ import {FormsModule} from "@angular/forms";
     HeaderComponent,
     HomeComponent,
     ReadingComponent,
-    RightSideComponent
+    UnitComponent
   ],
   imports: [
     CommonModule,

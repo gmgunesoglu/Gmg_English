@@ -1,0 +1,9 @@
+<div class="unit-list-div">
+  <div
+    class="unit-list-item-div"
+    *ngFor="let unit of units; let i = index"
+    (click)="selectUnit(unit)"
+  >
+    {{ unit.name }}
+  </div>
+</div>
