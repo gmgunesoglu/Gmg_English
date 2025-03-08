@@ -1,5 +1,32 @@
-.unit-list-div{
-  height: 100%;
-  width: 100%;
-  background: white;
+.unit-list-div {
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.unit-list-item-div {
+  border-bottom: 1px solid black;
+  align-self: stretch;
+}
+
+.unit-div{
+  font-size: 24px;
+  padding: 10px 10px 10px 20px;
+  align-self: stretch;
+  //border-bottom: 1px solid black;
+}
+
+
+.unit-div:hover,
+.title-div:hover{
+  background: #2D336B;
+}
+
+.title-list-div {
+  background: #A9B5DF;
+}
+
+.title-div {
+  font-size: 20px;
+  padding: 5px 1px 5px 40px;
 }

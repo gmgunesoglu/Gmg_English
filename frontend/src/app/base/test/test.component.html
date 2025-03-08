@@ -1,0 +1,35 @@
+<div class="a">
+  <div class="b">
+    <p>b1</p>
+    <p>b2</p>
+    <p>b3</p>
+    <p>b4</p>
+    <p>b5</p>
+    <p>b6</p>
+    <p>b7</p>
+    <p>b8</p>
+  </div>
+  <div class="c" *ngIf="text !== null && text.quests.length > 0">
+    <div *ngFor="let quest of text.quests">
+      <p>{{ quest.quest }}</p>
+      <form>
+        <label>
+          <input type="radio" name="option" value="option1">
+          {{quest.option_a}}
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="option2">
+          {{quest.option_b}}
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="option3">
+          {{quest.option_c}}
+        </label><br>
+        <label>
+          <input type="radio" name="option" value="option4">
+          {{quest.option_d}}
+        </label>
+      </form>
+    </div>
+  </div>
+</div>

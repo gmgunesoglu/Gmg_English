@@ -1,15 +1,16 @@
-import { Component } from '@angular/core';
+import {Component, EventEmitter, Output} from '@angular/core';
 import {Unit} from "../../models/unit";
 import {ReadingService} from "../../services/reading.service";
 
 @Component({
-  selector: 'app-right-side',
+  selector: 'app-unit',
   templateUrl: './unit.component.html',
   styleUrls: ['./unit.component.scss']
 })
 export class UnitComponent {
 
   units: Array<Unit> = []
+
 
   constructor(
     private readingService: ReadingService
@@ -29,6 +30,13 @@ export class UnitComponent {
   }
 
   selectUnit(unit: Unit) {
-    console.log("selected unit: " + unit)
+    console.log("selected unit: " + unit.name)
+    unit.showTitles = !unit.showTitles
   }
+
+  selectTitle(titleId: number) {
+    this.getTextDetail.emit(titleId);
+  }
+
+  @Output() getTextDetail: EventEmitter<number> = new EventEmitter<number>();
 }

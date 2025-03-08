@@ -1,24 +1,63 @@
 <div class="container">
 
-  <div [ngClass]="{ 'result-off': !outputText, 'result-on': outputText }">
-    <div class="reading-container">
-      <textarea
-        [(ngModel)]="inputText"
-        placeholder=""
-        class="input-textarea"
-      ></textarea>
-        <div class="reading-container-buttons">
-          <button class="submit-btn" (click)="updateText()">Process</button>
-          <button class="submit-btn">Check Reading</button>
-          <button class="submit-btn" (click)="deleteText()" >Clear</button>
-        </div>
+  <div class="reading-container">
+<!--  <div [ngClass]="{ 'result-off': !outputText, 'result-on': outputText }">-->
+    <div class="text-container">
+      <textarea [(ngModel)]="inputText" placeholder="" class="input-textarea"></textarea>
+      <div class="reading-container-buttons">
+        <button class="submit-btn" (click)="updateText()">Process</button>
+        <button class="submit-btn">Check Reading</button>
+        <button class="submit-btn" (click)="deleteText()" >Clear</button>
+      </div>
     </div>
-    <div class="result-container">
-      <textarea readonly>{{ outputText }}</textarea>
+
+    <div class="quest-container" *ngIf="text !== null && text.quests.length > 0">
+      <div *ngFor="let quest of text.quests">
+        <p>{{ quest.quest }}</p>
+        <form>
+          <label>
+            <input type="radio" name="option" value="option1">
+            {{quest.option_a}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option2">
+            {{quest.option_b}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option3">
+            {{quest.option_c}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option4">
+            {{quest.option_d}}
+          </label>
+        </form>
+        <form>
+          <label>
+            <input type="radio" name="option" value="option1">
+            {{quest.option_a}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option2">
+            {{quest.option_b}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option3">
+            {{quest.option_c}}
+          </label><br>
+          <label>
+            <input type="radio" name="option" value="option4">
+            {{quest.option_d}}
+          </label>
+        </form>
+      </div>
     </div>
+
   </div>
-  <div class="right">
-    <app-right-side class="app-right-side"></app-right-side>
-  </div>
+
+  <app-unit
+    (getTextDetail)="getTextDetail($event)"
+  ></app-unit>
+
 </div>
 

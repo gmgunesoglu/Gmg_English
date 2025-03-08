@@ -20,7 +20,7 @@ async def get_reading_texts(session: Session = Depends(get_session)):
         ) for text in reading_texts
     ]
 
-@router.get("{reading_text_id}", response_model=ReadingTextGet)
+@router.get("/{reading_text_id}", response_model=ReadingTextGet)
 async def get_reading_text(reading_text_id:int, session: Session = Depends(get_session)):
     text = session.get(ReadingText, reading_text_id)
     if text is None:
