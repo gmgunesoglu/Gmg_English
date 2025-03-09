@@ -1,6 +1,13 @@
-<div>
-  <input [(ngModel)]="newUnitName" placeholder="Enter title">
-  <button (click)="createNewUnit()">Save</button>
-  <button (click)="cancelCreatNewUnit()">Back</button>
+<div class="unit-create-container">
+  <div class="padding-container">
+    <div class="title-container">
+      <label>Title:</label>
+      <input [(ngModel)]="newUnitName" placeholder="Enter Title">
+    </div>
+    <div class="buttons-container">
+      <button (click)="cancelCreatNewUnit()">Back</button>
+      <button (click)="createNewUnit()">Next</button>
+    </div>
+  </div>
 </div>
 

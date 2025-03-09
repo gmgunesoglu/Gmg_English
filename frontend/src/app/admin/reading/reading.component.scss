@@ -1,37 +1,44 @@
 .center-div {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  //align-items: center;
+  //justify-content: center;
   height: 100%;
   width: 100%;
 }
 
 .child-app {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 90%;   /* Genişliği tamamen kapla */
-  height: 90%;  /* Yüksekliği tamamen kapla */
+  //display: flex;
+  //flex-direction: column;
+  //align-items: center;
+  //justify-content: center;
+  width: 100%;   /* Genişliği tamamen kapla */
+  height: 100%;  /* Yüksekliği tamamen kapla */
 }
 
 .listing-units {
   display: flex;
   flex-direction: column;
-  height: 90%;
-  width: 90%;
+  height: 100%;
+  width: 100%;
 }
 
 /* Arama formu */
 .listing-bar {
   display: flex;
-  justify-content: space-between;
   gap: 15px;
   margin-bottom: 10px;
   padding: 10px;
   background-color: #f8f9fa;
   border-radius: 8px;
+}
+
+.listing-bar input {
+  flex: 1;
+  padding: 8px 8px;
+  border-radius: 5px;
+  font-size: 14px;
+  //border: 1px solid #ced4da;
 }
 
 /* Kapsayıcı */
@@ -108,13 +115,13 @@
 }
 
 
-input[type="text"] {
-  width: 100%;
-  max-width: 250px;
-  padding: 8px 12px;
-  border-radius: 5px;
-  border: 1px solid #ced4da;
-}
+//input[type="text"] {
+//  width: 100%;
+//  max-width: 250px;
+//  padding: 8px 12px;
+//  border-radius: 5px;
+//  border: 1px solid #ced4da;
+//}
 
 button {
   padding: 10px 15px;
@@ -125,17 +132,17 @@ button {
   cursor: pointer;
 }
 
-/* Mobil uyumlu düzenleme */
-@media (max-width: 768px) {
-  .listing-bar {
-    flex-direction: column;
-  }
-
-  input[type="text"], button {
-    width: 100%;
-    margin-top: 10px;
-  }
-}
+///* Mobil uyumlu düzenleme */
+//@media (max-width: 768px) {
+//  .listing-bar {
+//    flex-direction: column;
+//  }
+//
+//  input[type="text"], button {
+//    width: 100%;
+//    margin-top: 10px;
+//  }
+//}
 
 
 

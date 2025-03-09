@@ -1,25 +1,62 @@
 .admin-container {
-  display: grid;
-  grid-template-rows: 1fr 9fr;
-  grid-template-columns: 1fr 6fr;
-  height: 100vh;
-  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  //grid-template-rows: 1fr 9fr;
+  //grid-template-columns: 1fr 6fr;
 }
 
-.admin-header-container, .admin-left-side-container, .logo-div {
+.admin-top-container {
+  display: flex;
+  height: 8%;
+  width: 100%;
+}
+
+.admin-bottom-container {
+  display: flex;
+  height: 92%;
+  width: 100%;
+}
+
+.admin-header-container, .admin-left-side-container, .admin-logo-container {
   background: #101010;
 }
 
-.admin-router-container {
-  background: #444444;
-  overflow: hidden;
-}
-
-.logo-div {
-  display: flex;                  /* Flexbox düzeni başlat */
-  justify-content: center; /* Öğeleri yatayda sola ve sağa yasla */
-  align-items: center;            /* Öğeleri dikeyde ortala */
+.admin-logo-container {
+  display: flex;
+  width: 14%;
   height: 100%;
   color: white;
   font-size: 20px;
+  justify-content: center;
+  align-items: center;
 }
+
+.admin-header-container {
+  //display: flex;
+  width: 86%;
+  height: 100%;
+}
+
+.admin-left-side-container {
+  //display: flex;
+  width: 14%;
+  height: 100%;
+}
+
+.admin-router-capsule-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 86%;
+  height: 100%;
+  background: #444444;
+}
+
+.admin-router-container{
+  height: 92%;
+  width: 92%;
+}
+
+
