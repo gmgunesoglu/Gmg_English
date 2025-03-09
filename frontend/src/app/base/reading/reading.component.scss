@@ -1,41 +1,37 @@
 .container {
-  display: grid;
-  grid-template-columns: 8fr 2fr; /* 2 sütun oluştur */
+  display: flex;
   height: 100%; /* Tüm ekran yüksekliği kadar alan kaplasın */
+  width: 100%;
 }
 
 app-unit {
-  height: 100%;
-  width: 100%;
   background: #7886C7;
+  flex: 6;
 }
 
 .reading-container {
-  display: flex;  /* İçindeki reading-div', esnetebilmek için flex yapalım */
+  display: flex;
   flex-direction: column;
-  height: 100%;
-  //margin: 10px 10px 10px 10px;
-  //align-self: stretch;
-  //flex: 1;
+  flex: 25;
+  padding: 10px;
+  gap: 10px;
 }
-
 
 .text-container{
   display: flex;
   flex-direction: column;
-  flex: 1; /* Bulunduğu alanı tamamen kaplasın */
-  //height: 100%; /* Parent (text-area) içindeki tüm alanı kaplasın */
+  flex: 1;
   align-self: stretch;
+  gap: 10px;
 }
 
-.reading-container textarea {
-  //align-self: stretch;
-  flex: 1; /* Boşluğu kaplaması için */
+.text-container textarea {
+  flex: 1;
   font-size: 16px;
   resize: none;
   border-radius: 10px;
-  padding: 10px;
-  margin: 10px;
+  //padding: 10px;
+  //margin: 10px;
 }
 
 .quest-container {
@@ -43,92 +39,29 @@ app-unit {
   flex-direction: column;
   background: white;
   border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
+  //margin: 10px;
+  //padding: 10px;
   flex-grow: 1;
   overflow-y: auto;         /* C'nin içeriği büyüdükçe dikey kaydırma çubuğu ekle */
 }
 
-//.quest-div {
-//  display: flex;
-//  flex-direction: column;
-//  overflow: hidden;  /* Taşmayı engeller */
-//  background: white;
-//  border-radius: 10px;
-//  flex-grow: 1;
-//  resize: none;
-//}
-
-//.quests {
-//  //max-height: 100%; /* Bu div'in yüksekliği ana konteynerin yüksekliği kadar olacak */
-//  overflow-y: auto; /* Yalnızca dikey kaydırma çubuğunu ekle */
-//  flex: 1;
-//}
-
-//.reading-container-buttons {
-//  display: flex;
-//  justify-content: space-between;
-//  margin: 10px;
-//  border-radius: 5px;
-//}
-//
-//.quest-div p {
-//  margin: 10px;
-//  background: #e3edec;
-//}
-
-//.context-container {
-//  //margin: 10px;
-//  display: flex;
-//  justify-content: center; /* Yatayda merkeze alır */
-//  flex-direction: column;
-//  overflow: hidden;  /* Taşmayı engeller */
-//}
-//
-
-//
-//.reading-container-buttons button {
-//  flex: 1; /* Butonların eşit genişlikte yayılmasını sağlar */
-//  margin: 0 5px; /* Butonlar arasında boşluk bırakır */
-//}
-//
-
-//
-//.submit-btn {
-//  padding: 10px;
-//  margin: 10px;
-//  background-color: #4CAF50;
-//  color: white;
-//  border: none;
-//  cursor: pointer;
-//}
-//
-//.submit-btn:hover {
-//  background-color: #45a049;
-//}
-//
-//.output-text p {
-//  //margin-top: 20px;
-//  font-size: 18px;
-//  color: #333;
-//}
-//
-//pre {
-//  background: white;
-//  color: #bc1515;
-//  overflow: auto;  /* Taşma durumunda scroll bar ekler */
-//  align-self: stretch;
-//  flex-grow: 1; /* Boşluğu kaplaması için */
-//  resize: none;
-//}
-//
 
 
-//.reading-full {
-//  height: 80% !important;
-//}
-//
-//.reading-height {
-//  height: 45% !important;
-//}
+.reading-container-buttons {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  border-radius: 5px;
+  //margin: 1px 10px 1px 10px;
+}
 
+.reading-container-buttons button {
+  flex: 1;
+  border-radius: 5px;
+  height: 30px;
+  background: #ededed;
+}
+
+.reading-container-buttons button:hover {
+  background-color: #d5d1d1;
+}

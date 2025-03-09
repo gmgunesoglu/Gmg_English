@@ -14,6 +14,8 @@ export class ReadingComponent {
   inputText: string = ''; // Kullanıcının girdiği metin
   outputText: string = ''; // Butona basıldığında gösterilecek metin
 
+  isQuestsOpen: boolean = false;
+
   text: Text | null = null
 
   units: Array<Unit> = []
@@ -23,7 +25,7 @@ export class ReadingComponent {
   ) {}
 
   ngOnInit(): void {
-    this.getUnits()
+    this.getUnits();
   }
 
   getUnits(){
@@ -59,5 +61,19 @@ export class ReadingComponent {
         this.inputText = this.text.context
       }
     });
+  }
+
+  checkReading() {
+
+  }
+
+  openQuests() {
+    if (this.text !== null && this.text.quests.length > 0){
+      this.isQuestsOpen = true;
+    }
+  }
+
+  closeQuests() {
+    this.isQuestsOpen = false;
   }
 }
