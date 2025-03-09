@@ -1,4 +1,4 @@
-.base-grid {
+.admin-container {
   display: grid;
   grid-template-rows: 1fr 9fr;
   grid-template-columns: 1fr 6fr;
@@ -6,11 +6,11 @@
   width: 100vw;
 }
 
-.admin-header-div, .admin-left-side-div, .logo-div {
+.admin-header-container, .admin-left-side-container, .logo-div {
   background: #101010;
 }
 
-.admin-rooter-div {
+.admin-router-container {
   background: #444444;
   overflow: hidden;
 }
