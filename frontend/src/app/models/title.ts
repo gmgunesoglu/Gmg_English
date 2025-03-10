@@ -1,4 +1,4 @@
 export interface Title {
   id: number;
-  title: string;
+  name: string;
 }

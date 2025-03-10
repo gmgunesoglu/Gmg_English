@@ -1,43 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
+import {Title} from "../../models/title";
+import {Unit} from "../../models/unit";
+import {FilteredUnit} from "../../models/filtered-unit";
+import {CreatedText} from "../../models/create-text";
+import {TextDetail} from "../../models/text-detail";
 
-interface Title {
-  id: number;
-  title: string;
-}
-
-interface Unit {
-  id: number;
-  name: string;
-  titles: Title[];
-  showTitles: boolean;
-}
-
-interface CreatedText {
-  "id": number,
-  "unit_name": string,
-  "title": string
-}
-
-interface Quest {
-  id: number;
-  quest: string;
-  option_a: string;
-  option_b: string;
-  option_c: string;
-  option_d: string;
-  correct_option: string;
-  justification: string;
-}
-
-interface TextData {
-  id: number;
-  unit_name: string;
-  title: string;
-  context: string;
-  quests: Quest[];
-}
 
 interface CreateTextUnit {
   id: number;
@@ -51,9 +20,9 @@ interface CreateTextUnit {
   styleUrls: ['./reading.component.scss']
 })
 export class ReadingComponent implements OnInit {
-  filteredUnits: Unit[] = [];
-  units: Unit[] = [];
-  selectedText: TextData | null = null;
+  filtered_units: FilteredUnit[] = [];
+  units: FilteredUnit[] = [];
+  selectedText: TextDetail | null = null;
   isListingUnits: boolean = true
   isCreatingText: boolean = false
   unitStart: string = ""
@@ -68,21 +37,21 @@ export class ReadingComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchUnits();
-    this.filteredUnits.forEach(unit => {
-      unit.showTitles = true;
-    });
+    // this.filtered_units.forEach(unit => {
+    //   unit.showTitles = true;
+    // });
   }
 
   fetchUnits(): void {
     this.http.get<Unit[]>('http://localhost:8000/readings/units').subscribe(
-      (data) => {
-        this.units = data.map(unit => ({
+      (result) => {
+        this.units = result.map(unit => ({
           ...unit,
-          showTitles: true
+          show_titles: true
         }));
-        this.filteredUnits = data.map(unit => ({
+        this.filtered_units = result.map(unit => ({
           ...unit,
-          showTitles: true
+          show_titles: true
         }));
       },
       (error) => console.error('Error fetching units:', error)
@@ -96,17 +65,17 @@ export class ReadingComponent implements OnInit {
   }
 
   loadText(titleId: number): void {
-    this.http.get<TextData>(`http://localhost:8000/readings/texts/${titleId}`).subscribe(
+    this.http.get<TextDetail>(`http://localhost:8000/readings/texts/${titleId}`).subscribe(
       (data) => this.selectedText = data,
       (error) => console.error('Error fetching text:', error)
     );
   }
 
   filterUnitsWithUnitNameAndTitle() {
-    this.filteredUnits = this.units.filter(unit => unit.name.startsWith(this.unitStart))
+    this.filtered_units = this.units.filter(unit => unit.name.startsWith(this.unitStart))
       .map(unit => ({
         ...unit,
-        titles: unit.titles.filter(title => title.title.startsWith(this.titleStart))
+        titles: unit.titles.filter(title => title.name.startsWith(this.titleStart))
       }));
   }
 
@@ -118,13 +87,13 @@ export class ReadingComponent implements OnInit {
 
 
   // Title'ları açma ve kapama işlevi
-  openTitles(unit: Unit, i: number): void {
-    unit.showTitles = true;
-    this.units[i].showTitles = true;
+  openTitles(unit: FilteredUnit, i: number): void {
+    unit.show_titles = true;
+    this.units[i].show_titles = true;
   }
-  closeTitles(unit: Unit, i: number): void {
-    unit.showTitles = false;
-    this.units[i].showTitles = false;
+  closeTitles(unit: FilteredUnit, i: number): void {
+    unit.show_titles = false;
+    this.units[i].show_titles = false;
   }
 
   // Unit detayları gösterme
@@ -153,7 +122,7 @@ export class ReadingComponent implements OnInit {
   }
 
   drop(event: CdkDragDrop<any[]>, targetUnit: any) {
-    const previousUnit = this.filteredUnits.find(unit => unit.titles === event.previousContainer.data);
+    const previousUnit = this.filtered_units.find(unit => unit.titles === event.previousContainer.data);
 
     if (!previousUnit) return;
 

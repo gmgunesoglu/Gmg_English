@@ -1,12 +1,12 @@
 <div class="unit-list-div">
   <div
-    class="unit-list-item-div" *ngFor="let unit of units; let i = index">
+    class="unit-list-item-div" *ngFor="let unit of filtered_units; let i = index">
     <div class="unit-div" (click)="selectUnit(unit)">{{ unit.name }}</div>
-    <div class="title-list-div" *ngIf="unit.showTitles">
+    <div class="title-list-div" *ngIf="unit.show_titles">
 
       <div class="title-list-item-div" *ngFor="let title of unit.titles" (click)="selectTitle(title.id)">
         <div class="title-div">
-          {{title.title}}
+          {{title.name}}
         </div>
       </div>
 

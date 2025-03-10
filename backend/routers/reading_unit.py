@@ -5,7 +5,7 @@ from typing import List
 
 from backend.database import get_session
 from backend.models import ReadingUnit
-from backend.schemas import ReadingUnitGets, ReadingUnitCreate, ReadingTextBase, ReadingUnitBase
+from backend.schemas import ReadingUnitGets, ReadingUnitCreate, Title, ReadingUnitBase
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
 
@@ -17,7 +17,7 @@ async def get_reading_units(session: Session = Depends(get_session)):
             id=unit.id,
             name=unit.name,
             titles=[
-                ReadingTextBase(id=text.id, title=text.title) for text in unit.reading_texts
+                Title(id=text.id, name=text.title) for text in unit.reading_texts
             ]
         )
         for unit in units

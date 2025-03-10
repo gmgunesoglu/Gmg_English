@@ -1,5 +1,6 @@
 import {Component, EventEmitter, Output} from '@angular/core';
 import {Unit} from "../../models/unit";
+import {FilteredUnit} from "../../models/filtered-unit";
 import {ReadingService} from "../../services/reading.service";
 
 @Component({
@@ -9,7 +10,7 @@ import {ReadingService} from "../../services/reading.service";
 })
 export class UnitComponent {
 
-  units: Array<Unit> = []
+  filtered_units: FilteredUnit[] = []
 
 
   constructor(
@@ -18,20 +19,25 @@ export class UnitComponent {
 
   ngOnInit(): void {
     this.getUnits()
-    console.log(this.units)
+    console.log(this.filtered_units)
   }
 
   getUnits(){
     this.readingService.getUnits().subscribe({
       next: (result) => {
-        this.units = result
+        this.filtered_units = result
+          .filter(unit => unit.titles.length > 0)
+          .map(unit => ({
+          ...unit,
+          show_titles: false
+        }));
       }
     });
   }
 
-  selectUnit(unit: Unit) {
+  selectUnit(unit: FilteredUnit) {
     console.log("selected unit: " + unit.name)
-    unit.showTitles = !unit.showTitles
+    unit.show_titles = !unit.show_titles
   }
 
   selectTitle(titleId: number) {

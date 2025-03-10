@@ -6,12 +6,11 @@
       <input type="text" placeholder="Unit name starts..." [(ngModel)]="unitStart" (keyup)="filterUnitsWithUnitNameAndTitle()">
       <input type="text" placeholder="Title starts..." [(ngModel)]="titleStart" (keyup)="filterUnitsWithUnitNameAndTitle()">
       <button (click)="openFormCreatingUnit()">Create New</button>
-      <!--      <button (click)="filterUnitsWithUnitNameAndTitle()">Search</button>-->
     </div>
 
     <div class="listing-list" cdkDropListGroup>
       <ul class="unit-list">
-        <li *ngFor="let unit of filteredUnits; let i = index" class="unit-item">
+        <li *ngFor="let unit of filtered_units; let i = index" class="unit-item">
           <div class="unit-header">
             <h2 class="unit-name">{{ unit.name }}</h2>
             <div class="unit-buttons">
@@ -19,15 +18,15 @@
               <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
               <button class="unit-button" (click)="updateUnit(unit)">Update</button>
               <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
-              <button *ngIf="unit.showTitles" class="unit-button" (click)="closeTitles(unit, i)">&uarr;</button>
-              <button *ngIf="!unit.showTitles" class="unit-button" (click)="openTitles(unit, i)">&darr;</button>
+              <button *ngIf="unit.show_titles" class="unit-button" (click)="closeTitles(unit, i)">&uarr;</button>
+              <button *ngIf="!unit.show_titles" class="unit-button" (click)="openTitles(unit, i)">&darr;</button>
             </div>
           </div>
 
-          <ul *ngIf="unit.showTitles" class="title-list" cdkDropList [cdkDropListData]="unit.titles"
+          <ul *ngIf="unit.show_titles" class="title-list" cdkDropList [cdkDropListData]="unit.titles"
               (cdkDropListDropped)="drop($event, unit)">
             <li *ngFor="let title of unit.titles" class="title-item" cdkDrag>
-              <span>{{ title.title }}</span>
+              <span>{{ title.name }}</span>
               <div class="unit-buttons">
                 <button class="unit-button" (click)="viewUnitDetails(unit)">Detail</button>
                 <button class="unit-button" (click)="updateUnit(unit)">Update</button>

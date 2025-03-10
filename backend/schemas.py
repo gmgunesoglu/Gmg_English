@@ -3,9 +3,9 @@ from typing import List
 from enum import Enum
 
 # subclass for ReadingUnitGets
-class ReadingTextBase(BaseModel):
+class Title(BaseModel):
     id: int
-    title: str
+    name: str
 
 # subclass for ReadingTextGet
 class ReadingQuestBase(BaseModel):
@@ -38,7 +38,7 @@ class ReadingUnitCreate(BaseModel):
 class ReadingUnitGets(BaseModel):
     id: int
     name: str
-    titles: List[ReadingTextBase]
+    titles: List[Title]
 
 # DELETE readings/units/{id}: id -> string
 

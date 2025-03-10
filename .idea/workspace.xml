@@ -4,18 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="base-reading view fixed (again). Next job is the same for  admin">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="(Unit + Text) Create View fixed.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/reading_unit.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_unit.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/schemas.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/base.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/base.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/base.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/base.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/title.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/title.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/unit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/unit.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -352,7 +352,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741524072626</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="(Unit + Text) Create View fixed.">
+      <option name="closed" value="true" />
+      <created>1741541846876</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1741541846876</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -396,7 +404,8 @@
     <MESSAGE value="Busy Day..." />
     <MESSAGE value="some updates" />
     <MESSAGE value="base-reading view fixed (again). Next job is the same for  admin" />
-    <option name="LAST_COMMIT_MESSAGE" value="base-reading view fixed (again). Next job is the same for  admin" />
+    <MESSAGE value="(Unit + Text) Create View fixed." />
+    <option name="LAST_COMMIT_MESSAGE" value="(Unit + Text) Create View fixed." />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
