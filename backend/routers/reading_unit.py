@@ -9,7 +9,7 @@ from backend.schemas import ReadingUnitGets, ReadingUnitCreate, Title, ReadingUn
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
 
-@router.get("/", response_model=List[ReadingUnitGets])
+@router.get("/", summary="Get all reading units", response_model=List[ReadingUnitGets])
 async def get_reading_units(session: Session = Depends(get_session)):
     units = session.exec(select(ReadingUnit)).all()
     return [

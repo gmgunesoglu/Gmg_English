@@ -2,7 +2,7 @@ from pydantic import BaseModel, constr
 from typing import List
 from enum import Enum
 
-# subclass for ReadingUnitGets
+# # subclass for ReadingUnitGets
 class Title(BaseModel):
     id: int
     name: str

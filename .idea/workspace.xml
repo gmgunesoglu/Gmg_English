@@ -4,18 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="(Unit + Text) Create View fixed.">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="some codes...">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/routers/reading_unit.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_unit.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/schemas.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/schemas.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/title.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/title.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/unit.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/unit.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,29 +88,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python.main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model.executor&quot;: &quot;Run&quot;,
-    &quot;Python.model_app.executor&quot;: &quot;Run&quot;,
-    &quot;Python.whisper_app.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/Gmg_English&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Users\\Gokhan\\Projects\\Python\\Gmg_English\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python.main (1).executor": "Run",
+    "Python.main.executor": "Run",
+    "Python.model.executor": "Run",
+    "Python.model_app.executor": "Run",
+    "Python.whisper_app.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/Gokhan/Projects/Python/Gmg_English",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
+    "ts.external.directory.path": "C:\\Users\\Gokhan\\Projects\\Python\\Gmg_English\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Gokhan\Projects\Python\Gmg_English\whisper_model" />
@@ -360,7 +353,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741541846876</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="some codes...">
+      <option name="closed" value="true" />
+      <created>1741626824754</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1741626824754</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,12 +406,22 @@
     <MESSAGE value="some updates" />
     <MESSAGE value="base-reading view fixed (again). Next job is the same for  admin" />
     <MESSAGE value="(Unit + Text) Create View fixed." />
-    <option name="LAST_COMMIT_MESSAGE" value="(Unit + Text) Create View fixed." />
+    <MESSAGE value="some codes..." />
+    <option name="LAST_COMMIT_MESSAGE" value="some codes..." />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/backend/.venv/Lib/site-packages/fastapi/openapi/utils.py</url>
+          <line>201</line>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="PythonConfigurationType">
-        <watch expression="e.orig" />
+        <watch expression="e.orig" language="Python" />
       </configuration>
     </watches-manager>
   </component>

@@ -1,10 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import {Unit} from "../../../models/unit";
 
-interface Unit {
-  id: number;
-  name: string;
-}
 
 @Component({
   selector: 'app-unit-create',
