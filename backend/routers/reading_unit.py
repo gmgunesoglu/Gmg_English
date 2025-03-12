@@ -9,7 +9,7 @@ from backend.schemas import ReadingUnitGets, ReadingUnitCreate, Title, ReadingUn
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
 
-@router.get("/", summary="Get all reading units", response_model=List[ReadingUnitGets])
+@router.get("/", summary="Get all units", response_model=List[ReadingUnitGets])
 async def get_reading_units(session: Session = Depends(get_session)):
     units = session.exec(select(ReadingUnit)).all()
     return [
@@ -23,7 +23,7 @@ async def get_reading_units(session: Session = Depends(get_session)):
         for unit in units
     ]
 
-@router.post("/", response_model=ReadingUnitBase)
+@router.post("/", summary="Create a unit", response_model=ReadingUnitBase)
 async def create_reading_unit(data: ReadingUnitCreate, session: Session = Depends(get_session)):
     new_unit = ReadingUnit(name=data.title)
     try:
@@ -36,7 +36,7 @@ async def create_reading_unit(data: ReadingUnitCreate, session: Session = Depend
     return ReadingUnit(id=new_unit.id, name=new_unit.name)
     # return f"Unit '{new_unit.name}' created successfully!"
 
-@router.put("/{reading_unit_id}", response_model=str)
+@router.put("/{reading_unit_id}", summary="Update a unit", response_model=str)
 async def update_reading_unit(reading_unit_id: int, data: ReadingUnitCreate, session: Session = Depends(get_session)):
     unit = session.get(ReadingUnit, reading_unit_id)
     if unit is None:
@@ -51,7 +51,7 @@ async def update_reading_unit(reading_unit_id: int, data: ReadingUnitCreate, ses
         raise HTTPException(status_code=400, detail=f"IntegrityError: {e}")
     return f"Unit updated successfully!"
 
-@router.delete("/{reading_unit_id}", response_model=str)
+@router.delete("/{reading_unit_id}", summary="Delete a unit", response_model=str)
 async def delete_reading_unit(reading_unit_id: int,session: Session = Depends(get_session)):
     unit = session.get(ReadingUnit, reading_unit_id)
     if unit is None:

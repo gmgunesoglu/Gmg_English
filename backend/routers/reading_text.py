@@ -9,7 +9,7 @@ from backend.database import get_session
 
 router = APIRouter(prefix="/readings/texts", tags=["ReadingText"])
 
-@router.get("/", response_model=List[ReadingTextGets])
+@router.get("/", summary="Get all titles", response_model=List[ReadingTextGets])
 async def get_reading_texts(session: Session = Depends(get_session)):
     reading_texts = session.exec(select(ReadingText)).all()
     return [
@@ -20,7 +20,7 @@ async def get_reading_texts(session: Session = Depends(get_session)):
         ) for text in reading_texts
     ]
 
-@router.get("/{reading_text_id}", response_model=ReadingTextGet)
+@router.get("/{reading_text_id}", summary="Get text details", response_model=ReadingTextGet)
 async def get_reading_text(reading_text_id:int, session: Session = Depends(get_session)):
     text = session.get(ReadingText, reading_text_id)
     if text is None:
@@ -44,7 +44,7 @@ async def get_reading_text(reading_text_id:int, session: Session = Depends(get_s
         ]
     )
 
-@router.post("/", response_model=ReadingTextGets)
+@router.post("/", summary="Create a text", response_model=ReadingTextGets)
 async def create_reading_text(data: ReadingTextCreate, session: Session = Depends(get_session)):
     new_text = ReadingText(reading_unit_id=data.unit_id, title=data.title, context=data.context)
     try:
@@ -60,7 +60,7 @@ async def create_reading_text(data: ReadingTextCreate, session: Session = Depend
         unit_name=new_text.reading_unit.name
     )
 
-@router.put("/{reading_text_id}", response_model=str)
+@router.put("/{reading_text_id}", summary="Update a text", response_model=str)
 async def update_reading_text(reading_text_id: int, data: ReadingTextCreate, session: Session = Depends(get_session)):
     text = session.get(ReadingText, reading_text_id)
     if text is None:
@@ -77,7 +77,7 @@ async def update_reading_text(reading_text_id: int, data: ReadingTextCreate, ses
         raise HTTPException(status_code=400, detail=f"IntegrityError: {e}")
     return "Text updated successfully!"
 
-@router.delete("/{reading_text_id}", response_model=str)
+@router.delete("/{reading_text_id}",summary="Delete a text",  response_model=str)
 async def delete_reading_unit(reading_text_id: int,session: Session = Depends(get_session)):
     text = session.get(ReadingText, reading_text_id)
     if text is None:

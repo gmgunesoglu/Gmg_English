@@ -9,7 +9,7 @@ from backend.database import get_session
 
 router = APIRouter(prefix="/readings/quests", tags=["ReadingQuest"])
 
-@router.post("/", response_model=str)
+@router.post("/", summary="Create a quest for a text", response_model=str)
 async def create_reading_quest(data: ReadingQuestPost, session: Session = Depends(get_session)):
     new_quest = ReadingQuest(
         reading_text_id=data.text_id,
@@ -30,7 +30,7 @@ async def create_reading_quest(data: ReadingQuestPost, session: Session = Depend
         raise HTTPException(status_code=400, detail=f"IntegrityError: {e}")
     return "Quest added successfully!"
 
-@router.put("/{reading_quest_id}", response_model=str)
+@router.put("/{reading_quest_id}", summary="Update a quest", response_model=str)
 async def update_reading_quest(reading_quest_id: int, data: ReadingQuestPost, session: Session = Depends(get_session)):
     quest = session.get(ReadingQuest, reading_quest_id)
     if quest is None:
@@ -52,7 +52,7 @@ async def update_reading_quest(reading_quest_id: int, data: ReadingQuestPost, se
         raise HTTPException(status_code=400, detail=f"IntegrityError: {e}")
     return "Quest updated successfully!"
 
-@router.delete("/{reading_quest_id}", response_model=str)
+@router.delete("/{reading_quest_id}", summary="Delete a quest", response_model=str)
 async def delete_reading_unit(reading_quest_id: int,session: Session = Depends(get_session)):
     quest = session.get(ReadingQuest, reading_quest_id)
     if quest is None:
