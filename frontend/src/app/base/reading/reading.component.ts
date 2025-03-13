@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {ReadingService} from "../../services/reading.service";
 import {Unit} from "../../models/unit";
-import {Text} from "../../models/text";
+import {TextDetail} from "../../models/text-detail";
 
 
 @Component({
@@ -16,7 +16,7 @@ export class ReadingComponent {
 
   isQuestsOpen: boolean = false;
 
-  text: Text | null = null
+  text_detail!: TextDetail;
 
   units: Array<Unit> = []
 
@@ -48,17 +48,17 @@ export class ReadingComponent {
   }
 
   getTextDetail(titleId: number) {
-    this.readingService.getText(titleId).subscribe({
+    this.readingService.getTextDetail(titleId).subscribe({
       next: (result) => {
-        this.text = result
-        for (const quest of this.text.quests) {
+        this.text_detail = result
+        for (const quest of this.text_detail.quests) {
           console.log("quest: " + quest.quest)
           console.log("A: " + quest.option_a)
           console.log("B: " + quest.option_b)
           console.log("C: " + quest.option_c)
           console.log("D: " + quest.option_d)
         }
-        this.inputText = this.text.context
+        this.inputText = this.text_detail.context
       }
     });
   }
@@ -68,7 +68,7 @@ export class ReadingComponent {
   }
 
   openQuests() {
-    if (this.text !== null && this.text.quests.length > 0){
+    if (this.text_detail !== null && this.text_detail.quests.length > 0){
       this.isQuestsOpen = true;
     }
   }

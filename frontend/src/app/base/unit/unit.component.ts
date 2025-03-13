@@ -1,5 +1,4 @@
 import {Component, EventEmitter, Output} from '@angular/core';
-import {Unit} from "../../models/unit";
 import {FilteredUnit} from "../../models/filtered-unit";
 import {ReadingService} from "../../services/reading.service";
 
@@ -22,6 +21,10 @@ export class UnitComponent {
     console.log(this.filtered_units)
   }
 
+
+  @Output() getTextDetail: EventEmitter<number> = new EventEmitter<number>();
+
+
   getUnits(){
     this.readingService.getUnits().subscribe({
       next: (result) => {
@@ -43,6 +46,4 @@ export class UnitComponent {
   selectTitle(titleId: number) {
     this.getTextDetail.emit(titleId);
   }
-
-  @Output() getTextDetail: EventEmitter<number> = new EventEmitter<number>();
 }

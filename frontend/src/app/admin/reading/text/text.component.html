@@ -1,22 +1,38 @@
 <div class="text-container">
-  <button (click)="closeText()">Back</button>
+  <div class="text-padding-container">
 
-  <h2>{{ text.title }}</h2>
-  <p><strong>Unit:</strong> {{ text.unit_name }}</p>
-  <p><strong>Context:</strong> {{ text.context }}</p>
+    <div class="left-and-right-container">
 
-  <h3>Quests</h3>
-  <ul>
-    <li *ngFor="let quest of text.quests">
-      <strong>{{ quest.quest }}</strong>
-      <ul>
-        <li>A) {{ quest.option_a }}</li>
-        <li>B) {{ quest.option_b }}</li>
-        <li>C) {{ quest.option_c }}</li>
-        <li>D) {{ quest.option_d }}</li>
-      </ul>
-      <p><strong>Correct Answer:</strong> {{ quest.correct_option }}</p>
-      <p><strong>Justification:</strong> {{ quest.justification }}</p>
-    </li>
-  </ul>
+      <div class="left-container">
+        <h2> {{ text_detail.unit_name }} </h2>
+        <h2> {{ text_detail.title }} </h2>
+        <textarea>{{text_detail.context}}</textarea>
+      </div>
+
+      <div class="right-container">
+        <div class="quest-container">
+          <ul>
+            <li *ngFor="let quest of text_detail.quests">
+              <strong>{{ quest.quest }}</strong>
+              <ul>
+                <li>A) {{ quest.option_a }}</li>
+                <li>B) {{ quest.option_b }}</li>
+                <li>C) {{ quest.option_c }}</li>
+                <li>D) {{ quest.option_d }}</li>
+              </ul>
+              <p><strong>Correct Answer:</strong> {{ quest.correct_option }}</p>
+              <p><strong>Justification:</strong> {{ quest.justification }}</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="buttons-container">
+      <button (click)="closeText()">Update</button>
+      <button (click)="closeText()">Back</button>
+    </div>
+
+  </div>
 </div>

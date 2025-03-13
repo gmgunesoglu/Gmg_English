@@ -1,16 +1,8 @@
 import {Component, Input} from '@angular/core';
+import {Unit} from "../../../models/unit";
 
 
-interface Title {
-  id: number;
-  title: string;
-}
 
-interface Unit {
-  id: number;
-  name: string;
-  titles: Title[];
-}
 
 @Component({
   selector: 'app-unit',

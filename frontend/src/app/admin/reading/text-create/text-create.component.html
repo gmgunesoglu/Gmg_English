@@ -2,14 +2,14 @@
   <div class="padding-container">
 
     <div class="title-container">
-      <label>Unit Name: ?? </label>
+      <label>Unit Name: {{ unit.name }}</label>
 <!--      <label>Title:</label>-->
-      <input id="title" type="text" [(ngModel)]="createText.title" name="title" required placeholder="Enter a Title">
+      <input id="title" type="text" [(ngModel)]="create_text.title" name="title" required placeholder="Enter a Title">
     </div>
 
     <div class="context-container">
 <!--      <label for="context">Context:</label>-->
-      <textarea id="context" [(ngModel)]="createText.context" name="context" required placeholder="Enter context..."></textarea>
+      <textarea id="context" [(ngModel)]="create_text.context" name="context" required placeholder="Enter context..."></textarea>
     </div>
 
     <div class="buttons-container">

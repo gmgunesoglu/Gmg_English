@@ -9,7 +9,6 @@ import { HomeComponent } from './home/home.component';
 import { ReadingComponent } from './reading/reading.component';
 import { UnitComponent } from './unit/unit.component';
 import {FormsModule} from "@angular/forms";
-import { TestComponent } from './test/test.component';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { TestComponent } from './test/test.component';
     HomeComponent,
     ReadingComponent,
     UnitComponent,
-    TestComponent
   ],
   imports: [
     CommonModule,

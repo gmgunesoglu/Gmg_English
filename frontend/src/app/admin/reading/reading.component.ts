@@ -1,17 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import {Component, OnInit, Optional} from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from "@angular/cdk/drag-drop";
 import {Title} from "../../models/title";
 import {Unit} from "../../models/unit";
 import {FilteredUnit} from "../../models/filtered-unit";
-import {CreatedText} from "../../models/create-text";
 import {TextDetail} from "../../models/text-detail";
-
-
-interface CreateTextUnit {
-  id: number;
-  name: string;
-}
+import {ReadingService} from "../../services/reading.service";
+import {CreatedText} from "../../models/created-text";
 
 
 @Component({
@@ -20,30 +14,29 @@ interface CreateTextUnit {
   styleUrls: ['./reading.component.scss']
 })
 export class ReadingComponent implements OnInit {
+  selected_unit!: Unit;
   filtered_units: FilteredUnit[] = [];
   units: FilteredUnit[] = [];
-  selectedText: TextDetail | null = null;
-  isListingUnits: boolean = true
-  isCreatingText: boolean = false
-  unitStart: string = ""
-  titleStart: string = ""
-  isCreatingUnit: boolean = false
-  create_text_unit: CreateTextUnit = {
-    id: 0,
-    name: ""
-  }
+  isListingUnits: boolean = true;
+  isCreatingText: boolean = false;
+  unitStart: string = "";
+  titleStart: string = "";
+  isCreatingUnit: boolean = false;
+  isTextDetail: boolean = false;
+  text_detail!: TextDetail;
 
-  constructor(private http: HttpClient) {}
+
+  constructor(
+    private readingService: ReadingService
+  ) {}
 
   ngOnInit(): void {
     this.fetchUnits();
-    // this.filtered_units.forEach(unit => {
-    //   unit.showTitles = true;
-    // });
   }
 
+
   fetchUnits(): void {
-    this.http.get<Unit[]>('http://localhost:8000/readings/units').subscribe(
+    this.readingService.getUnits().subscribe(
       (result) => {
         this.units = result.map(unit => ({
           ...unit,
@@ -64,13 +57,6 @@ export class ReadingComponent implements OnInit {
     this.isCreatingText = false;
   }
 
-  loadText(titleId: number): void {
-    this.http.get<TextDetail>(`http://localhost:8000/readings/texts/${titleId}`).subscribe(
-      (data) => this.selectedText = data,
-      (error) => console.error('Error fetching text:', error)
-    );
-  }
-
   filterUnitsWithUnitNameAndTitle() {
     this.filtered_units = this.units.filter(unit => unit.name.startsWith(this.unitStart))
       .map(unit => ({
@@ -80,13 +66,12 @@ export class ReadingComponent implements OnInit {
   }
 
   listUnits() {
-    this.isCreatingUnit = false;
     this.isListingUnits = true;
+    this.isCreatingUnit = false;
     this.isCreatingText = false;
+    this.isTextDetail = false;
   }
 
-
-  // Title'ları açma ve kapama işlevi
   openTitles(unit: FilteredUnit, i: number): void {
     unit.show_titles = true;
     this.units[i].show_titles = true;
@@ -96,22 +81,25 @@ export class ReadingComponent implements OnInit {
     this.units[i].show_titles = false;
   }
 
-  // Unit detayları gösterme
-  viewUnitDetails(unit: Unit): void {
+  getTextDetail(unit: Unit): void {
     console.log('Viewing details for unit: ', unit);
-    // Detaylar gösterme işlemi
+    this.readingService.getTextDetail(unit.id).subscribe(
+      (result) => {
+      this.text_detail = result;
+      this.isListingUnits = false;
+      this.isTextDetail = true;
+    });
+
   }
 
-  // Unit güncelleme
   updateUnit(unit: Unit): void {
     console.log('Updating unit: ', unit);
     // Güncelleme işlemi
   }
 
-  // Unit silme
   deleteUnit(unit: Unit): void {
     console.log('Deleting unit: ', unit);
-    this.http.delete<string>(`http://localhost:8000/readings/units/${unit.id}`).subscribe(
+    this.readingService.deleteUnit(unit.id).subscribe(
       (message) => {
         console.log('Server response:', message);
         this.fetchUnits()
@@ -140,21 +128,23 @@ export class ReadingComponent implements OnInit {
     }
   }
 
-  createText(unit: CreateTextUnit | Unit) {
-    this.create_text_unit = unit
+  createText(unit: Unit) {
+    this.selected_unit = unit;
+    console.log("selected unit: ", unit);
     this.isListingUnits = false;
+    this.isCreatingUnit = false;
     this.isCreatingUnit = false;
     this.isCreatingText = true;
   }
 
-  stopCreating($event: CreatedText) {
+  stopCreating(created_text: CreatedText) {
     this.fetchUnits()
     this.listUnits()
   }
 
   deleteText(title: Title) {
     console.log('Deleting title: ', title);
-    this.http.delete<string>(`http://localhost:8000/readings/texts/${title.id}`).subscribe(
+    this.readingService.deleteText(title.id).subscribe(
       (message) => {
         console.log('Server response:', message);
         this.fetchUnits()

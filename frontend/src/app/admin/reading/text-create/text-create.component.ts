@@ -1,22 +1,9 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Unit} from "../../../models/unit";
+import {ReadingService} from "../../../services/reading.service";
+import {CreatedText} from "../../../models/created-text";
+import {CreateText} from "../../../models/create-text";
 
-interface Unit {
-  id: number;
-  name: string;
-}
-
-interface CreateText {
-  "unit_id": number,
-  "title": string,
-  "context": string
-}
-
-interface CreatedText {
-  "id": number,
-  "unit_name": string,
-  "title": string
-}
 
 @Component({
   selector: 'app-text-create',
@@ -25,30 +12,28 @@ interface CreatedText {
 })
 export class TextCreateComponent {
 
-  constructor(private http: HttpClient) {}
-  createdText: CreatedText | null = null;
-  createText: CreateText = {
-    unit_id: 0,
-    title: "",
-    context: ""
-  }
-
   @Input() unit!: Unit;
+  @Output() continueCreate: EventEmitter<CreatedText> = new EventEmitter<CreatedText>();
+  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
+  create_text!: CreateText;
+
+  constructor(
+    private readingService: ReadingService
+  ) {}
 
   ngOnInit() {
     console.log('Unit:', this.unit);
+    this.create_text = {
+      unit_id: this.unit.id,
+      title: "",
+      context: "",
+    }
   }
 
-  @Output() continueCreate: EventEmitter<CreatedText> = new EventEmitter<CreatedText>();
-  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
-
   createNewText(): void {
-    this.createText.unit_id = this.unit.id
-    this.http.post<CreatedText>('http://localhost:8000/readings/texts', this.createText).subscribe(
+    this.readingService.createText(this.create_text).subscribe(
       (created_text) => {
-        // this.createdText = created_text
         this.continueCreate.emit(created_text);
-
       },
       (error) => {
         alert(error.error);

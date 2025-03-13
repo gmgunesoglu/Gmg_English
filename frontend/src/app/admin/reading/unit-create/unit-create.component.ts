@@ -1,6 +1,8 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {Unit} from "../../../models/unit";
+import {CreateUnit} from "../../../models/create-unit";
+import {ReadingService} from "../../../services/reading.service";
 
 
 @Component({
@@ -10,24 +12,30 @@ import {Unit} from "../../../models/unit";
 })
 export class UnitCreateComponent {
 
-  constructor(private http: HttpClient) {}
-  newUnitName: string = "";
+  create_unit: CreateUnit = {
+    title: "",
+  }
+
+
+  constructor(
+    private readingService: ReadingService
+  ) {}
+
 
   @Output() continueCreate: EventEmitter<Unit> = new EventEmitter<Unit>();
   @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
 
+
   createNewUnit(): void {
-    if (!this.newUnitName.trim()) return;
-    const payload = { title: this.newUnitName };
-    this.http.post<Unit>('http://localhost:8000/readings/units', payload).subscribe(
+    if (!this.create_unit.title.trim()) return;
+    this.readingService.createUnit(this.create_unit).subscribe(
       (unit) => {
-        this.newUnitName = '';
-        // this.fetchUnits();
-        // alert(message); // Gelen mesajı bir uyarı olarak göster
+        this.create_unit.title = '';
         this.continueCreate.emit(unit)
       },
       (error) =>  alert(error.error.detail)
     );
+
   }
 
   cancelCreatNewUnit() {

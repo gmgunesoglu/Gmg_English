@@ -1,8 +1,11 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Unit } from "../models/unit";
-import { Text } from "../models/text";
+import { TextDetail } from "../models/text-detail";
 import {Observable} from "rxjs";
+import {CreateUnit} from "../models/create-unit";
+import {CreateText} from "../models/create-text";
+import {CreatedText} from "../models/created-text";
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +23,23 @@ export class ReadingService {
     return this.http.get<Array<Unit>>(this.url + "units");
   }
 
-  getText(titleId: number) {
-    return this.http.get<Text>(this.url + "texts/" + titleId);
+  getTextDetail(titleId: number) {
+    return this.http.get<TextDetail>(this.url + "texts/" + titleId);
+  }
+
+  createUnit(create_unit: CreateUnit) {
+    return this.http.post<Unit>('http://localhost:8000/readings/units', create_unit);
+  }
+
+  deleteText(id: number) {
+    return this.http.delete<string>(`http://localhost:8000/readings/texts/${id}`);
+  }
+
+  deleteUnit(id: number) {
+    return this.http.delete<string>(`http://localhost:8000/readings/units/${id}`);
+  }
+
+  createText(createText: CreateText) {
+    return this.http.post<CreatedText>('http://localhost:8000/readings/texts', createText)
   }
 }

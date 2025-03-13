@@ -12,8 +12,8 @@
       </div>
     </div>
 
-    <div class="quest-container" *ngIf="isQuestsOpen == true && text !== null && text.quests.length > 0">
-      <div *ngFor="let quest of text.quests">
+    <div class="quest-container" *ngIf="isQuestsOpen == true && text_detail !== null && text_detail.quests.length > 0">
+      <div *ngFor="let quest of text_detail.quests">
         <p>{{ quest.quest }}</p>
         <form>
           <label>
