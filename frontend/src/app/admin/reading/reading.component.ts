@@ -81,9 +81,10 @@ export class ReadingComponent implements OnInit {
     this.units[i].show_titles = false;
   }
 
-  getTextDetail(unit: Unit): void {
-    console.log('Viewing details for unit: ', unit);
-    this.readingService.getTextDetail(unit.id).subscribe(
+  getTextDetail(title: Title, unit: Unit): void {
+    console.log('Selected title: ', title);
+    this.selected_unit = unit;
+    this.readingService.getTextDetail(title.id).subscribe(
       (result) => {
       this.text_detail = result;
       this.isListingUnits = false;

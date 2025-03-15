@@ -8,7 +8,7 @@ import {HttpClientModule} from "@angular/common/http";
 
 const routes: Routes = [
   { path: '', component: AdminComponent, children: [
-      { path: '', component: HomeComponent }, // Ana sayfa
+      { path: '', component: HomeComponent },
       { path: 'reading', component: ReadingComponent },
     ] }
 ];

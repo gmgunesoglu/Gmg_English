@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {CreateUnit} from "../models/create-unit";
 import {CreateText} from "../models/create-text";
 import {CreatedText} from "../models/created-text";
+import {UpdateText} from "../models/update-text";
 
 @Injectable({
   providedIn: 'root'
@@ -41,5 +42,9 @@ export class ReadingService {
 
   createText(createText: CreateText) {
     return this.http.post<CreatedText>('http://localhost:8000/readings/texts', createText)
+  }
+
+  updateText(update_text: UpdateText, text_id: number) {
+    return this.http.put<String>(`http://localhost:8000/readings/texts/${text_id}`, update_text)
   }
 }

@@ -4,18 +4,23 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import {MinContextLengthDirective} from "./validators/min-context-length.directive";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    // MinContextLengthDirective,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
   ],
   providers: [],
+  // exports: [
+  //   MinContextLengthDirective
+  // ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

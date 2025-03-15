@@ -4,32 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="open api problem fixed">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some codes cleaned. TextComponent added to admin area.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit/unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit/unit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/base-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/base-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/base.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/base.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/reading/reading.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/test/test.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/test/test.component.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/test/test.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/test/test.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/base/unit/unit.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/create-text.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/create-text.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/text-detail.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/models/text-detail.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/models/text.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/services/reading.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/reading.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -116,6 +102,7 @@
     &quot;Python.main.executor&quot;: &quot;Run&quot;,
     &quot;Python.model.executor&quot;: &quot;Run&quot;,
     &quot;Python.model_app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
     &quot;Python.whisper_app.executor&quot;: &quot;Run&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
@@ -188,13 +175,37 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gmg_English" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/backend" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/backend/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <list>
+      <item itemvalue="Python.test" />
       <item itemvalue="Python.main" />
       <item itemvalue="Python.model_app" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -399,7 +410,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741798912848</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="Some codes cleaned. TextComponent added to admin area.">
+      <option name="closed" value="true" />
+      <created>1741899830099</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1741899830099</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -447,7 +466,8 @@
     <MESSAGE value="some codes..." />
     <MESSAGE value="Error discovered on backend about open api (swagger). Problem's reason is that the end points do not contain summaries. Next job is adding summaries for all the end points" />
     <MESSAGE value="open api problem fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="open api problem fixed" />
+    <MESSAGE value="Some codes cleaned. TextComponent added to admin area." />
+    <option name="LAST_COMMIT_MESSAGE" value="Some codes cleaned. TextComponent added to admin area." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

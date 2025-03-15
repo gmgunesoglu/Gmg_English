@@ -14,7 +14,7 @@ export class TextCreateComponent {
 
   @Input() unit!: Unit;
   @Output() continueCreate: EventEmitter<CreatedText> = new EventEmitter<CreatedText>();
-  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
+  @Output() back: EventEmitter<void> = new EventEmitter<void>();
   create_text!: CreateText;
 
   constructor(
@@ -43,6 +43,6 @@ export class TextCreateComponent {
   }
 
   cancelCreateNewText() {
-    this.cancelCreate.emit();
+    this.back.emit();
   }
 }

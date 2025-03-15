@@ -28,7 +28,7 @@
             <li *ngFor="let title of unit.titles" class="title-item" cdkDrag>
               <span>{{ title.name }}</span>
               <div class="unit-buttons">
-                <button class="unit-button" (click)="getTextDetail(unit)">Detail</button>
+                <button class="unit-button" (click)="getTextDetail(title, unit)">Detail</button>
                 <button class="unit-button" (click)="updateUnit(unit)">Update</button>
                 <button class="unit-button" (click)="deleteText(title)">Delete</button>
               </div>
@@ -41,19 +41,20 @@
   </div>
 
   <app-unit-create *ngIf="isCreatingUnit" class="child-app"
-                   (cancelCreate)="listUnits()"
+                   (back)="listUnits()"
                    (continueCreate)="createText($event)"
   ></app-unit-create>
 
   <app-text-create *ngIf="isCreatingText" class="child-app"
                    [unit]="selected_unit"
-                   (cancelCreate)="listUnits()"
+                   (back)="listUnits()"
                    (continueCreate)="stopCreating($event)"
   ></app-text-create>
 
   <app-text *ngIf="isTextDetail" class="child-app"
             [text_detail]="text_detail"
-            (cancel)="listUnits()"
+            [unit_id]="selected_unit.id"
+            (back)="listUnits()"
   ></app-text>
 
 </div>

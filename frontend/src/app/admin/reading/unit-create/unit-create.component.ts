@@ -23,7 +23,7 @@ export class UnitCreateComponent {
 
 
   @Output() continueCreate: EventEmitter<Unit> = new EventEmitter<Unit>();
-  @Output() cancelCreate: EventEmitter<void> = new EventEmitter<void>();
+  @Output() back: EventEmitter<void> = new EventEmitter<void>();
 
 
   createNewUnit(): void {
@@ -39,7 +39,7 @@ export class UnitCreateComponent {
   }
 
   cancelCreatNewUnit() {
-    this.cancelCreate.emit()
+    this.back.emit()
   }
 
 }
