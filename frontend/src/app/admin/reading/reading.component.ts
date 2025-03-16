@@ -93,11 +93,6 @@ export class ReadingComponent implements OnInit {
 
   }
 
-  updateUnit(unit: Unit): void {
-    console.log('Updating unit: ', unit);
-    // Güncelleme işlemi
-  }
-
   deleteUnit(unit: Unit): void {
     console.log('Deleting unit: ', unit);
     this.readingService.deleteUnit(unit.id).subscribe(

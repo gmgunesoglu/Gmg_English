@@ -16,7 +16,6 @@
             <div class="unit-buttons">
               <button class="unit-button" (click)="createText(unit)">Add-Text</button>
 <!--              <button class="unit-button" (click)="getTextDetail(unit)">Detail</button>-->
-              <button class="unit-button" (click)="updateUnit(unit)">Update</button>
               <button class="unit-button" (click)="deleteUnit(unit)">Delete</button>
               <button *ngIf="unit.show_titles" class="unit-button" (click)="closeTitles(unit, i)">&uarr;</button>
               <button *ngIf="!unit.show_titles" class="unit-button" (click)="openTitles(unit, i)">&darr;</button>
@@ -29,7 +28,6 @@
               <span>{{ title.name }}</span>
               <div class="unit-buttons">
                 <button class="unit-button" (click)="getTextDetail(title, unit)">Detail</button>
-                <button class="unit-button" (click)="updateUnit(unit)">Update</button>
                 <button class="unit-button" (click)="deleteText(title)">Delete</button>
               </div>
             </li>

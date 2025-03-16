@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 10px;
   gap: 10px;
-  width: 100%;
+  width: calc(100% - 20px);
   height: calc(100% - 20px);
   background-color: #f8f9fa;
   border-radius: 10px;
@@ -23,6 +23,20 @@
   padding: 10px;
   font-size: 16px;
   border-style: none;
+}
+
+.left-container input {
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+}
+
+.unit-name {
+  font-size: 22px;
+}
+
+.text-title {
+  font-size: 20px;
 }
 
 .left-container,

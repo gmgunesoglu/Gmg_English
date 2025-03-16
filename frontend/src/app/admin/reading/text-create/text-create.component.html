@@ -1,21 +1,46 @@
 <div class="text-create-container">
-  <div class="padding-container">
+    <form #createTextForm="ngForm" class="form-container">
 
-    <div class="title-container">
-      <label>Unit Name: {{ unit.name }}</label>
-<!--      <label>Title:</label>-->
+        <label class="unit-name">{{ unit.name }}</label>
+
+        <input type="text" id="title" name="title" class="form-control" required maxlength="70" [pattern]="titlePattern"
+               [(ngModel)]="create_text.title" placeholder="Enter title here..." #title="ngModel">
+        <div *ngIf="title.invalid" class="alert">
+          <div *ngIf="title.errors?.['required']">Title is required.</div>
+          <div *ngIf="title.errors?.['maxlength']">Title can be max 70 characters.</div>
+          <div *ngIf="title.errors?.['pattern']">Title can not be blank</div>
+        </div>
+
+        <textarea type="text" id="context" name="context" class="form-control" required appMinTextLength="100"
+                  [(ngModel)]="create_text.context" placeholder="Enter context here..." #context="ngModel"></textarea>
+        <div *ngIf="context.invalid" class="alert">
+          <div *ngIf="context.errors?.['required']">Context is required.</div>
+          <div *ngIf="context.errors?.['minTextLength']">Context must be at least 100 characters long without blank spaces.</div>
+        </div>
+
+        <div class="buttons-container">
+          <button type="button" (click)="cancelCreateNewText()">Cancel</button>
+          <button type="submit" (click)="createNewText()" [disabled]="createTextForm.invalid">Save</button>
+        </div>
+
+    </form>
+</div>
+
+
+  <!-- <div class="padding-container"> -->
+
+    <!-- <div class="title-container">
+      <label>{{ unit.name }}</label>
       <input id="title" type="text" [(ngModel)]="create_text.title" name="title" required placeholder="Enter a Title">
     </div>
 
     <div class="context-container">
-<!--      <label for="context">Context:</label>-->
       <textarea id="context" [(ngModel)]="create_text.context" name="context" required placeholder="Enter context..."></textarea>
-    </div>
+    </div> -->
 
-    <div class="buttons-container">
+    <!-- <div class="buttons-container">
       <button type="reset" (click)="cancelCreateNewText()">Back</button>
-      <button type="submit" (click)="createNewText()">Create</button>
-    </div>
+      <button type="submit" (click)="createNewText()">Save</button>
+    </div> -->
 
-  </div>
-</div>
+  <!-- </div> -->

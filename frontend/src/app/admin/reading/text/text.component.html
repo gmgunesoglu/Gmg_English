@@ -1,11 +1,10 @@
 <div class="text-container">
-<!--  <div class="text-padding-container">-->
 
     <div class="left-and-right-container">
 
       <div class="left-container" *ngIf="!is_updating_text">
-        <h2> {{ text_detail.unit_name }} </h2>
-        <h2> {{ text_detail.title }} </h2>
+        <label class="unit-name"> {{ text_detail.unit_name }} </label>
+        <label class="text-title"> {{ text_detail.title }} </label>
         <textarea>{{text_detail.context}}</textarea>
         <div class="buttons-container">
           <button (click)="updateText()">Update</button>
@@ -14,7 +13,7 @@
 
       <form #updateTextForm="ngForm" class="left-container" *ngIf="is_updating_text">
 
-        <h2> {{ text_detail.unit_name }} </h2>
+        <label class="unit-name"> {{ text_detail.unit_name }} </label>
 
         <input type="text" id="title" name="title" class="form-control" required maxlength="70" [pattern]="titlePattern"
                [(ngModel)]="update_text.title" placeholder="{{ text_detail.title }}" #title="ngModel">
@@ -30,7 +29,6 @@
           <div *ngIf="context.errors?.['required']">Context is required.</div>
           <div *ngIf="context.errors?.['minTextLength']">Context must be at least 100 characters long without blank spaces.</div>
         </div>
-<!--        <div *ngIf="!is_context_long_enough" class="alert">Context can be min 100 characters without blank characters.</div>-->
 
         <div class="buttons-container">
           <button type="button" (click)="cancelUpdateText()">Cancel</button>
@@ -66,5 +64,4 @@
       <button (click)="closeText()">Back</button>
     </div>
 
-<!--  </div>-->
 </div>

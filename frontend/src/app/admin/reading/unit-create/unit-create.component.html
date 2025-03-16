@@ -1,5 +1,23 @@
 <div class="unit-create-container">
-  <div class="padding-container">
+  <form #createUnitForm="ngForm" class="form-container">
+
+    <input type="text" id="title" name="title" class="form-control" required maxlength="35" [pattern]="titlePattern"
+            [(ngModel)]="create_unit.title" placeholder="Enter title here..." #title="ngModel">
+    <div *ngIf="title.invalid" class="alert">
+      <div *ngIf="title.errors?.['required']">Title is required.</div>
+      <div *ngIf="title.errors?.['maxlength']">Title can be max 35 characters.</div>
+      <div *ngIf="title.errors?.['pattern']">Title can not be blank</div>
+    </div>
+
+    <div class="buttons-container">
+      <button type="button" (click)="cancelCreatNewUnit()">Cancel</button>
+      <button type="submit" (click)="createNewUnit()" [disabled]="createUnitForm.invalid">Save</button>
+    </div>
+
+  </form>
+</div>
+
+<!--   <div class="padding-container">
     <div class="title-container">
       <input [(ngModel)]="create_unit.title" placeholder="Enter a Unit Name">
     </div>
@@ -7,6 +25,4 @@
       <button (click)="cancelCreatNewUnit()">Back</button>
       <button (click)="createNewUnit()">Next</button>
     </div>
-  </div>
-</div>
-
+  </div> -->

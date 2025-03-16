@@ -1,5 +1,4 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import {Unit} from "../../../models/unit";
 import {CreateUnit} from "../../../models/create-unit";
 import {ReadingService} from "../../../services/reading.service";
@@ -12,6 +11,9 @@ import {ReadingService} from "../../../services/reading.service";
 })
 export class UnitCreateComponent {
 
+  @Output() continueCreate: EventEmitter<Unit> = new EventEmitter<Unit>();
+  @Output() back: EventEmitter<void> = new EventEmitter<void>();
+  titlePattern = '^(?!\\s*$).+';
   create_unit: CreateUnit = {
     title: "",
   }
@@ -20,10 +22,6 @@ export class UnitCreateComponent {
   constructor(
     private readingService: ReadingService
   ) {}
-
-
-  @Output() continueCreate: EventEmitter<Unit> = new EventEmitter<Unit>();
-  @Output() back: EventEmitter<void> = new EventEmitter<void>();
 
 
   createNewUnit(): void {

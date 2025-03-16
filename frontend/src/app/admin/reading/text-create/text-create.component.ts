@@ -16,6 +16,7 @@ export class TextCreateComponent {
   @Output() continueCreate: EventEmitter<CreatedText> = new EventEmitter<CreatedText>();
   @Output() back: EventEmitter<void> = new EventEmitter<void>();
   create_text!: CreateText;
+  titlePattern = '^(?!\\s*$).+';
 
   constructor(
     private readingService: ReadingService

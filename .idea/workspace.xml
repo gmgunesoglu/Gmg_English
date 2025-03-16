@@ -4,19 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some codes cleaned. TextComponent added to admin area.">
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Text component created. Form validation implemented. Custom form validation generated. &#10;Next job: Implement form validation for Text/Unit/Quest Create/Update... Check context length on backend.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/admin.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routers/reading_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routers/reading_text.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/reading.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text-create/text-create.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/text/text.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/admin/reading/unit-create/unit-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/frontend/src/app/services/reading.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/frontend/src/app/services/reading.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,7 +419,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741899830099</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="Text component created. Form validation implemented. Custom form validation generated. &#10;Next job: Implement form validation for Text/Unit/Quest Create/Update... Check context length on backend.">
+      <option name="closed" value="true" />
+      <created>1742065815982</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1742065815982</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -467,7 +476,8 @@
     <MESSAGE value="Error discovered on backend about open api (swagger). Problem's reason is that the end points do not contain summaries. Next job is adding summaries for all the end points" />
     <MESSAGE value="open api problem fixed" />
     <MESSAGE value="Some codes cleaned. TextComponent added to admin area." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some codes cleaned. TextComponent added to admin area." />
+    <MESSAGE value="Text component created. Form validation implemented. Custom form validation generated. &#10;Next job: Implement form validation for Text/Unit/Quest Create/Update... Check context length on backend." />
+    <option name="LAST_COMMIT_MESSAGE" value="Text component created. Form validation implemented. Custom form validation generated. &#10;Next job: Implement form validation for Text/Unit/Quest Create/Update... Check context length on backend." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

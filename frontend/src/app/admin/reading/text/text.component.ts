@@ -16,7 +16,6 @@ export class TextComponent {
   is_updating_text: boolean = false;
   update_text!: UpdateText;
   titlePattern = '^(?!\\s*$).+';
-  // is_context_long_enough: boolean = true;
 
   constructor(
     private readingService: ReadingService,
@@ -30,7 +29,6 @@ export class TextComponent {
       context: "",
       title: "",
     }
-    // this.checkContextLength()
   }
 
   closeText(): void {
@@ -48,10 +46,6 @@ export class TextComponent {
   }
 
   saveUpdateText() {
-    // if (!this.is_context_long_enough){
-    //   console.log("context is not long enough...");
-    //   return;
-    // }
     this.readingService.updateText(this.update_text, this.text_detail.id).subscribe(
       (result) => {
         console.log(result)
@@ -63,14 +57,4 @@ export class TextComponent {
     );
     this.is_updating_text = false;
   }
-
-  // isContextLengthOk() {
-  //   const contextValue = this.update_text.context;
-  //   const nonWhitespaceValue = contextValue.replace(/\s+/g, '').trim();
-  //   return nonWhitespaceValue.length >= 100;
-  // }
-
-  // checkContextLength(): void {
-  //   this.is_context_long_enough = this.update_text.context.trim().length >= 100;
-  // }
 }

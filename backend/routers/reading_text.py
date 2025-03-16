@@ -46,6 +46,19 @@ async def get_reading_text(reading_text_id:int, session: Session = Depends(get_s
 
 @router.post("/", summary="Create a text", response_model=ReadingTextGets)
 async def create_reading_text(data: ReadingTextCreate, session: Session = Depends(get_session)):
+    if len(data.context.strip()) < 100:
+        raise HTTPException(
+            status_code=422,
+            detail=[
+                {
+                    "type": "string_too_short",
+                    "loc": ["body", "context"],
+                    "msg": "String should have at least 100 characters without any black characters",
+                    "input": data.context,
+                    "ctx": {"min_length": 100}
+                }
+            ]
+        )
     new_text = ReadingText(reading_unit_id=data.unit_id, title=data.title, context=data.context)
     try:
         session.add(new_text)
@@ -62,6 +75,19 @@ async def create_reading_text(data: ReadingTextCreate, session: Session = Depend
 
 @router.put("/{reading_text_id}", summary="Update a text", response_model=str)
 async def update_reading_text(reading_text_id: int, data: ReadingTextCreate, session: Session = Depends(get_session)):
+    if len(data.context.strip()) < 100:
+        raise HTTPException(
+            status_code=422,
+            detail=[
+                {
+                    "type": "string_too_short",
+                    "loc": ["body", "context"],
+                    "msg": "String should have at least 100 characters without any black characters",
+                    "input": data.context,
+                    "ctx": {"min_length": 100}
+                }
+            ]
+        )
     text = session.get(ReadingText, reading_text_id)
     if text is None:
         raise HTTPException(status_code=404, detail=f"Text not found with id: {reading_text_id}")
