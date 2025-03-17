@@ -4,7 +4,7 @@ from sqlmodel import Session, select
 from sqlalchemy.exc import IntegrityError
 
 from backend.models import ReadingQuest
-from backend.schemas import ReadingQuestPost
+from backend.schemas import ReadingQuestPost, ReadingQuestUpdate
 from backend.database import get_session
 
 router = APIRouter(prefix="/readings/quests", tags=["ReadingQuest"])
@@ -31,11 +31,10 @@ async def create_reading_quest(data: ReadingQuestPost, session: Session = Depend
     return "Quest added successfully!"
 
 @router.put("/{reading_quest_id}", summary="Update a quest", response_model=str)
-async def update_reading_quest(reading_quest_id: int, data: ReadingQuestPost, session: Session = Depends(get_session)):
+async def update_reading_quest(reading_quest_id: int, data: ReadingQuestUpdate, session: Session = Depends(get_session)):
     quest = session.get(ReadingQuest, reading_quest_id)
     if quest is None:
         raise HTTPException(status_code=404, detail=f"Quest not found with id: {reading_quest_id}")
-    quest.reading_text_id = data.text_id
     quest.quest = data.quest
     quest.option_a = data.option_a
     quest.option_b = data.option_b

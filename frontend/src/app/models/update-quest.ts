@@ -1,7 +1,6 @@
 import { OptionType } from "./option-type";
 
-export interface Quest {
-  id: number;
+export interface UpdateQuest {
   quest: string;
   option_a: string;
   option_b: string;

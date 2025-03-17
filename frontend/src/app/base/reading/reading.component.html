@@ -2,7 +2,7 @@
 
   <div class="reading-container">
     <div class="text-container">
-      <textarea [(ngModel)]="inputText" placeholder="" class="input-textarea"></textarea>
+      <textarea readonly [(ngModel)]="inputText" placeholder="" class="input-textarea"></textarea>
       <div class="reading-container-buttons">
         <button (click)="checkReading()">Check Reading</button>
         <button *ngIf="isQuestsOpen == false" (click)="openQuests()">Open Quests</button>

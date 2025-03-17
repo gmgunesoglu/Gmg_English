@@ -37,7 +37,7 @@ app-unit {
   flex-direction: column;
   background: white;
   border-radius: 10px;
-  flex-grow: 1;
+  flex: 1;
   overflow-y: auto;         /* C'nin içeriği büyüdükçe dikey kaydırma çubuğu ekle */
 }
 

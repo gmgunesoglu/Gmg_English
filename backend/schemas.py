@@ -67,9 +67,18 @@ class ReadingTextCreate(BaseModel):
 
 
 # POST readings/quests: ReadingQuestPost -> string
-# PUT readings/quests/{id}: ReadingQuestPost + id -> string
 class ReadingQuestPost(BaseModel):
     text_id: int
+    quest: constr(min_length=5, max_length=400)
+    option_a: constr(min_length=1, max_length=100)
+    option_b: constr(min_length=1, max_length=100)
+    option_c: constr(min_length=1, max_length=100)
+    option_d: constr(min_length=1, max_length=100)
+    correct_option: OptionType
+    justification : constr(min_length=10, max_length=500)
+
+# PUT readings/quests/{id}: ReadingQuestPost + id -> string
+class ReadingQuestUpdate(BaseModel):
     quest: constr(min_length=5, max_length=400)
     option_a: constr(min_length=1, max_length=100)
     option_b: constr(min_length=1, max_length=100)

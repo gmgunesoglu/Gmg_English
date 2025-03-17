@@ -5,7 +5,7 @@
       <div class="left-container" *ngIf="!is_updating_text">
         <label class="unit-name"> {{ text_detail.unit_name }} </label>
         <label class="text-title"> {{ text_detail.title }} </label>
-        <textarea>{{text_detail.context}}</textarea>
+        <textarea readonly>{{text_detail.context}}</textarea>
         <div class="buttons-container">
           <button (click)="updateText()">Update</button>
         </div>
@@ -18,7 +18,6 @@
         <input type="text" id="title" name="title" class="form-control" required maxlength="70" [pattern]="titlePattern"
                [(ngModel)]="update_text.title" placeholder="{{ text_detail.title }}" #title="ngModel">
         <div *ngIf="title.invalid" class="alert">
-          <div *ngIf="title.errors?.['required']">Title is required.</div>
           <div *ngIf="title.errors?.['maxlength']">Title can be max 70 characters.</div>
           <div *ngIf="title.errors?.['pattern']">Title can not be blank</div>
         </div>
@@ -26,7 +25,6 @@
         <textarea type="text" id="context" name="context" class="form-control" required appMinTextLength="100"
                   [(ngModel)]="update_text.context" placeholder="{{ text_detail.context }}" #context="ngModel"></textarea>
         <div *ngIf="context.invalid" class="alert">
-          <div *ngIf="context.errors?.['required']">Context is required.</div>
           <div *ngIf="context.errors?.['minTextLength']">Context must be at least 100 characters long without blank spaces.</div>
         </div>
 
@@ -38,23 +36,148 @@
       </form>
 
       <div class="right-container">
-        <div class="quest-container">
-          <ul>
-            <li *ngFor="let quest of text_detail.quests">
-              <strong>{{ quest.quest }}</strong>
-              <ul>
-                <li>A) {{ quest.option_a }}</li>
-                <li>B) {{ quest.option_b }}</li>
-                <li>C) {{ quest.option_c }}</li>
-                <li>D) {{ quest.option_d }}</li>
-              </ul>
-              <p><strong>Correct Answer:</strong> {{ quest.correct_option }}</p>
-              <p><strong>Justification:</strong> {{ quest.justification }}</p>
-            </li>
-          </ul>
+
+        <div class="quest-list-container" *ngIf="!is_creating_quest && !is_updating_quest">
+            <div class="quest-item-container" *ngFor="let quest of text_detail.quests">
+                <div class="quest">
+                 <span>{{ quest.quest }}</span>
+                </div>
+                <div class="options">
+                  <span>A) {{ quest.option_a }}</span>
+                  <span>B) {{ quest.option_b }}</span>
+                  <span>C) {{ quest.option_c }}</span>
+                  <span>D) {{ quest.option_d }}</span>
+                </div>
+                <div class="justification">
+                  <span>{{ quest.correct_option }}) {{ quest.justification }}</span>
+                </div>
+                <div class="buttons">
+                  <button (click)="deleteQuest(quest.id)">Delete</button>
+                  <button (click)="openUpdateQuestForm(quest)">Update</button>
+                </div>
+            </div>
         </div>
-        <div class="buttons-container">
-          <button (click)="closeText()">Add Quest</button>
+
+        <div class="create-quest-container" *ngIf="is_creating_quest">
+          <form #addQuestForm="ngForm">
+
+            <textarea type="text" id="quest" name="quest" class="form-control" required minlength="5" maxlength="400" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.quest" placeholder="Enter quest here..." #quest="ngModel"></textarea>
+            <div *ngIf="quest.invalid" class="alert">
+              <div *ngIf="quest.errors?.['minlength']">Quest can be min 5 characters.</div>
+              <div *ngIf="quest.errors?.['maxlength']">Quest can be max 400 characters.</div>
+              <div *ngIf="quest.errors?.['pattern']">Quest can not be blank, can not have mutli lines</div>
+            </div>
+
+            <input type="text" id="option_a" name="option_a" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.option_a" placeholder="Enter option a here..." #option_a="ngModel">
+            <div *ngIf="option_a.invalid" class="alert">
+              <div *ngIf="option_a.errors?.['maxlength']">Option A can be max 100 characters.</div>
+              <div *ngIf="option_a.errors?.['pattern']">Option A can not be blank</div>
+            </div>
+
+            <input type="text" id="option_b" name="option_b" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.option_b" placeholder="Enter option b here..." #option_b="ngModel">
+            <div *ngIf="option_b.invalid" class="alert">
+              <div *ngIf="option_b.errors?.['maxlength']">Option B can be max 100 characters.</div>
+              <div *ngIf="option_b.errors?.['pattern']">Option B can not be blank</div>
+            </div>
+
+            <input type="text" id="option_c" name="option_c" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.option_c" placeholder="Enter option c here..." #option_c="ngModel">
+            <div *ngIf="option_c.invalid" class="alert">
+              <div *ngIf="option_c.errors?.['maxlength']">Option C can be max 100 characters.</div>
+              <div *ngIf="option_c.errors?.['pattern']">Option C can not be blank</div>
+            </div>
+
+            <input type="text" id="option_d" name="option_d" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.option_d" placeholder="Enter option d here..." #option_d="ngModel">
+            <div *ngIf="option_d.invalid" class="alert">
+              <div *ngIf="option_d.errors?.['maxlength']">Option D can be max 100 characters.</div>
+              <div *ngIf="option_d.errors?.['pattern']">Option D can not be blank</div>
+            </div>
+
+            <textarea type="text" id="justification" name="justification" class="form-control" required minlength="10" maxlength="500" [pattern]="titlePattern"
+                  [(ngModel)]="create_quest.justification" placeholder="Enter justification here..." #justification="ngModel"></textarea>
+            <div *ngIf="justification.invalid" class="alert">
+              <div *ngIf="justification.errors?.['minlength']">Justification can be min 10 characters.</div>
+              <div *ngIf="justification.errors?.['maxlength']">Justification can be max 500 characters.</div>
+              <div *ngIf="justification.errors?.['pattern']">Justification can not be blank, can not have mutli lines</div>
+            </div>
+
+            <select id="correct_option" name="correct_option" class="form-control" required [(ngModel)]="create_quest.correct_option" #correct_option="ngModel">
+              <option *ngFor="let option of option_types" [value]="option">{{ option }}</option>
+            </select>
+
+          </form>
+
+          <div class="buttons-container">
+            <button type="button" (click)="cancelCreateText()">Close</button>
+            <button type="submit" (click)="saveQuest()" [disabled]="addQuestForm.invalid">Save</button>
+          </div>
+        </div>
+
+        <div class="create-quest-container" *ngIf="is_updating_quest">
+          <form #updateQuestForm="ngForm">
+
+            <textarea type="text" id="quest" name="quest" class="form-control" required minlength="5" maxlength="400" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.quest" placeholder=" {{ selected_quest.quest }} " #quest="ngModel"></textarea>
+            <div *ngIf="quest.invalid" class="alert">
+              <div *ngIf="quest.errors?.['minlength']">Quest can be min 5 characters.</div>
+              <div *ngIf="quest.errors?.['maxlength']">Quest can be max 400 characters.</div>
+              <div *ngIf="quest.errors?.['pattern']">Quest can not be blank, can not have mutli lines</div>
+            </div>
+
+            <input type="text" id="option_a" name="option_a" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.option_a" placeholder=" {{ selected_quest.option_a }} " #option_a="ngModel">
+            <div *ngIf="option_a.invalid" class="alert">
+              <div *ngIf="option_a.errors?.['maxlength']">Option A can be max 100 characters.</div>
+              <div *ngIf="option_a.errors?.['pattern']">Option A can not be blank</div>
+            </div>
+
+            <input type="text" id="option_b" name="option_b" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.option_b" placeholder=" {{ selected_quest.option_b }} " #option_b="ngModel">
+            <div *ngIf="option_b.invalid" class="alert">
+              <div *ngIf="option_b.errors?.['maxlength']">Option B can be max 100 characters.</div>
+              <div *ngIf="option_b.errors?.['pattern']">Option B can not be blank</div>
+            </div>
+
+            <input type="text" id="option_c" name="option_c" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.option_c" placeholder=" {{ selected_quest.option_c }} " #option_c="ngModel">
+            <div *ngIf="option_c.invalid" class="alert">
+              <div *ngIf="option_c.errors?.['maxlength']">Option C can be max 100 characters.</div>
+              <div *ngIf="option_c.errors?.['pattern']">Option C can not be blank</div>
+            </div>
+
+            <input type="text" id="option_d" name="option_d" class="form-control" required maxlength="100" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.option_d" placeholder=" {{ selected_quest.option_d }} " #option_d="ngModel">
+            <div *ngIf="option_d.invalid" class="alert">
+              <div *ngIf="option_d.errors?.['maxlength']">Option D can be max 100 characters.</div>
+              <div *ngIf="option_d.errors?.['pattern']">Option D can not be blank</div>
+            </div>
+
+            <textarea type="text" id="justification" name="justification" class="form-control" required minlength="10" maxlength="500" [pattern]="titlePattern"
+                  [(ngModel)]="update_quest.justification" placeholder=" {{ selected_quest.justification }} " #justification="ngModel"></textarea>
+            <div *ngIf="justification.invalid" class="alert">
+              <div *ngIf="justification.errors?.['minlength']">Justification can be min 10 characters.</div>
+              <div *ngIf="justification.errors?.['maxlength']">Justification can be max 500 characters.</div>
+              <div *ngIf="justification.errors?.['pattern']">Justification can not be blank, can not have mutli lines</div>
+            </div>
+
+            <select id="correct_option" name="correct_option" class="form-control" required [(ngModel)]="update_quest.correct_option" #correct_option="ngModel">
+              <option *ngFor="let option of option_types" [value]="option">{{ option }}</option>
+            </select>
+
+          </form>
+
+          <div class="buttons-container">
+            <button type="button" (click)="cancelUpdateQuest()">Close</button>
+            <button type="submit" (click)="updateQuest()" [disabled]="updateQuestForm.invalid">Save</button>
+          </div>
+        </div>
+
+        <div class="buttons-container" *ngIf="!is_creating_quest">
+          <button (click)="createQuest()">Add Quest</button>
         </div>
       </div>
 

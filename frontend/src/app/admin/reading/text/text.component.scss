@@ -25,10 +25,17 @@
   border-style: none;
 }
 
+.left-container label {
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
 .left-container input {
-  border-radius: 10px;
-  padding: 10px;
-  font-size: 16px;
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
 }
 
 .unit-name {
@@ -47,14 +54,14 @@
   gap: 10px;
 }
 
-.quest-container {
+/* .quest-container {
   display: flex;
   flex-direction: column;
   flex: 1;
   background: white;
   border-radius: 10px;
   overflow-y: auto;
-}
+} */
 
 .buttons-container {
   display: flex;
@@ -77,4 +84,69 @@
   color: red;
 }
 
+.create-quest-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
 
+.create-quest-container form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  gap: 10px;
+  flex: 1;
+}
+
+.create-quest-container input, select, textarea {
+  border-radius: 5px;
+  font-size: 20;
+  padding: 5px;
+}
+
+.create-quest-container textarea {
+  flex: 1;
+  resize: none;
+}
+
+.quest-list-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  background: white;
+  border-radius: 10px;
+  overflow-y: auto;
+  gap: 5px;
+  padding: 10px;
+}
+
+.quest-item-container {
+  display: flex;
+  flex-direction: column;
+  background: rgb(245, 245, 245);
+  border-radius: 5px;
+  padding: 5px;
+  gap: 10px;
+}
+
+.options {
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+  gap: 5px;
+}
+
+.justification {
+  padding-left: 10px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 5px;
+  height: 25px;
+  border-radius: 5px;
+}
