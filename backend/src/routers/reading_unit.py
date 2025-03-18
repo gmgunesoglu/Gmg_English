@@ -3,9 +3,9 @@ from sqlalchemy.exc import IntegrityError
 from sqlmodel import Session, select
 from typing import List
 
-from backend.database import get_session
-from backend.models import ReadingUnit
-from backend.schemas import ReadingUnitGets, ReadingUnitCreate, Title, ReadingUnitBase
+from backend.src.database import get_session
+from backend.src.models import ReadingUnit
+from backend.src.schemas import ReadingUnitGets, ReadingUnitCreate, Title, ReadingUnitBase
 
 router = APIRouter(prefix="/readings/units", tags=["ReadingUnit"])
 

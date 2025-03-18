@@ -1,11 +1,10 @@
-from typing import List
 from fastapi import APIRouter, Depends, HTTPException
-from sqlmodel import Session, select
+from sqlmodel import Session
 from sqlalchemy.exc import IntegrityError
 
-from backend.models import ReadingQuest
-from backend.schemas import ReadingQuestPost, ReadingQuestUpdate
-from backend.database import get_session
+from backend.src.models import ReadingQuest
+from backend.src.schemas import ReadingQuestPost, ReadingQuestUpdate
+from backend.src.database import get_session
 
 router = APIRouter(prefix="/readings/quests", tags=["ReadingQuest"])
 

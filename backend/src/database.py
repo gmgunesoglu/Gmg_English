@@ -1,6 +1,4 @@
-from sqlalchemy import Index, func
 from sqlmodel import SQLModel, create_engine, Session
-from backend.models import ReadingText, ReadingQuest, ReadingUnit
 
 DATABASE_URL = "postgresql://postgres:postgres@localhost:5432/gmg_english"
 
