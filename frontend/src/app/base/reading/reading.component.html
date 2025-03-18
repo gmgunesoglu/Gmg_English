@@ -12,26 +12,25 @@
       </div>
     </div>
 
-    <div class="quest-container" *ngIf="isQuestsOpen == true && text_detail !== null && text_detail.quests.length > 0">
-      <div *ngFor="let quest of text_detail.quests">
-        <p>{{ quest.quest }}</p>
-        <form>
-          <label>
-            <input type="radio" name="option" value="option1">
-            {{quest.option_a}}
-          </label><br>
-          <label>
-            <input type="radio" name="option" value="option2">
-            {{quest.option_b}}
-          </label><br>
-          <label>
-            <input type="radio" name="option" value="option3">
-            {{quest.option_c}}
-          </label><br>
-          <label>
-            <input type="radio" name="option" value="option4">
-            {{quest.option_d}}
-          </label>
+    <div class="quest-list-container" *ngIf="isQuestsOpen == true && text_detail !== null && text_detail.quests.length > 0">
+      <div class="quest-item-container" *ngFor="let quest of text_detail.quests">
+        <label>{{ quest.quest }}</label>
+        <form class="quest-form">
+          <div [class]="getOptionClass(quest, option_types[0])">
+            <input type="radio" name="option{{quest.id}}" value="option1" (change)="optionSelected(quest, option_types[0])" [disabled]="answeredQuestions.has(quest.id)">{{quest.option_a}}
+          </div>
+          <div [class]="getOptionClass(quest, option_types[1])">
+            <input type="radio" name="option{{quest.id}}" value="option2" (change)="optionSelected(quest, option_types[1])" [disabled]="answeredQuestions.has(quest.id)">{{quest.option_b}}
+          </div>
+          <div [class]="getOptionClass(quest, option_types[2])">
+            <input type="radio" name="option{{quest.id}}" value="option3" (change)="optionSelected(quest, option_types[2])" [disabled]="answeredQuestions.has(quest.id)">{{quest.option_c}}
+          </div>
+          <div [class]="getOptionClass(quest, option_types[3])">
+            <input type="radio" name="option{{quest.id}}" value="option4" (change)="optionSelected(quest, option_types[3])" [disabled]="answeredQuestions.has(quest.id)">{{quest.option_d}}
+          </div>
+          <div *ngIf="answeredQuestions.get(quest.id) && answeredQuestions.get(quest.id)?.is_answer_correct === false">
+            <label>{{ quest.justification }}</label>
+          </div>
         </form>
       </div>
     </div>

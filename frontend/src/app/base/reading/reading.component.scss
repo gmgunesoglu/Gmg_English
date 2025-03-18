@@ -5,7 +5,7 @@
 }
 
 app-unit {
-  background: #7886C7;
+  background: #dee4ff;
   flex: 6;
 }
 
@@ -30,17 +30,33 @@ app-unit {
   font-size: 16px;
   resize: none;
   border-radius: 10px;
+  padding: 10px;
 }
 
-.quest-container {
+.quest-list-container {
   display: flex;
+  flex: 1;
   flex-direction: column;
   background: white;
   border-radius: 10px;
-  flex: 1;
-  overflow-y: auto;         /* C'nin içeriği büyüdükçe dikey kaydırma çubuğu ekle */
+  padding: 5px;
+  overflow-y: auto;
+  gap: 5px;
 }
 
+.quest-item-container {
+  background-color: rgb(245, 245, 245);
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.quest-form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
 
 
 .reading-container-buttons {
@@ -59,4 +75,17 @@ app-unit {
 
 .reading-container-buttons button:hover {
   background-color: #d5d1d1;
+}
+
+
+.answer-correct {
+  background-color: lightgreen; /* Doğru cevap için yeşil */
+  color: white;
+  font-weight: bold;
+}
+
+.answer-wrong {
+  background-color: lightcoral; /* Yanlış cevap için kırmızı */
+  color: white;
+  font-weight: bold;
 }

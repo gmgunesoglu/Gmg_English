@@ -8,7 +8,7 @@ import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ReadingComponent } from './reading/reading.component';
 import { UnitComponent } from './unit/unit.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -23,6 +23,7 @@ import {FormsModule} from "@angular/forms";
   imports: [
     CommonModule,
     BaseRoutingModule,
+    ReactiveFormsModule,
     FormsModule,
   ]
 })
