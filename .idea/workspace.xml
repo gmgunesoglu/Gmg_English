@@ -4,12 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="Some file struct changes on backend. First step to Websocket Protocol.">
-      <change afterPath="$PROJECT_DIR$/whisper_model/test_model.py" afterDir="false" />
+    <list default="true" id="b7f89eae-87b6-4506-a520-d3f241272643" name="Changes" comment="some updates">
+      <change afterPath="$PROJECT_DIR$/whisper_model/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whisper_model/src/listener.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whisper_model/src/stt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/backend/src/routers/reading_text.py" beforeDir="false" afterPath="$PROJECT_DIR$/backend/src/routers/reading_text.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whisper_model/model_app.py" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_model/model_app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whisper_model/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_model/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whisper_model/listener.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whisper_model/reading_text.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/whisper_model/requirements.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,11 +94,13 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.listener.executor": "Run",
     "Python.main (1).executor": "Run",
     "Python.main.executor": "Run",
     "Python.model.executor": "Run",
     "Python.model_app.executor": "Run",
     "Python.models.executor": "Run",
+    "Python.stt.executor": "Run",
     "Python.test.executor": "Run",
     "Python.whisper_app.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
@@ -103,13 +108,13 @@
     "RunOnceActivity.git.unshallow": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "reading-checker",
-    "last_opened_file_path": "C:/Users/Gokhan/Projects/Python/Gmg_English",
+    "last_opened_file_path": "C:/Users/Gokhan/Projects/Python/Gmg_English/whisper_model",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "com.intellij.pycharm.community.ide.impl.configuration.PythonContentEntriesConfigurable",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable",
     "ts.external.directory.path": "C:\\Users\\Gokhan\\Projects\\Python\\Gmg_English\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
@@ -122,10 +127,33 @@
       <recent name="C:\Users\Gokhan\Projects\Python\Gmg_English\frontend\src\app\base" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Gokhan\Projects\Python\Gmg_English\whisper_model\src" />
       <recent name="C:\Users\Gokhan\Projects\Python\Gmg_English\backend\src" />
     </key>
   </component>
   <component name="RunManager" selected="Python.model_app">
+    <configuration name="listener" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gmg_English" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whisper_model" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="C:\Users\Gokhan\Projects\Python\Gmg_English\whisper_model\src\listener.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Gmg_English" />
       <option name="ENV_FILES" value="" />
@@ -194,6 +222,28 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="stt" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Gmg_English" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/whisper_model/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/whisper_model/src/stt.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Gmg_English" />
       <option name="ENV_FILES" value="" />
@@ -218,12 +268,16 @@
     </configuration>
     <list>
       <item itemvalue="Python.model_app" />
+      <item itemvalue="Python.listener" />
+      <item itemvalue="Python.stt" />
       <item itemvalue="Python.models" />
       <item itemvalue="Python.test" />
       <item itemvalue="Python.main" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.stt" />
+        <item itemvalue="Python.listener" />
         <item itemvalue="Python.main" />
         <item itemvalue="Python.models" />
         <item itemvalue="Python.test" />
@@ -479,7 +533,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742316201537</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="some updates">
+      <option name="closed" value="true" />
+      <created>1742405700759</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1742405700759</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -521,7 +583,6 @@
     <MESSAGE value="Some updates on frontend" />
     <MESSAGE value="Some updates on frontend..." />
     <MESSAGE value="Busy Day..." />
-    <MESSAGE value="some updates" />
     <MESSAGE value="base-reading view fixed (again). Next job is the same for  admin" />
     <MESSAGE value="(Unit + Text) Create View fixed." />
     <MESSAGE value="some codes..." />
@@ -533,7 +594,8 @@
     <MESSAGE value="Cruds OK on frontend" />
     <MESSAGE value="Quest answering feature added for reading. Reading service's basic features are done. Time to add real time audio streaming..." />
     <MESSAGE value="Some file struct changes on backend. First step to Websocket Protocol." />
-    <option name="LAST_COMMIT_MESSAGE" value="Some file struct changes on backend. First step to Websocket Protocol." />
+    <MESSAGE value="some updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="some updates" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
