@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="30471b0e-af17-4bce-8295-0d7de1bfaf08" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/listener.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/listener.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/reading_text.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/listener.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/listener.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stt.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/stt.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,12 +31,12 @@
     &quot;assignee&quot;: &quot;gmgunesoglu&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/gmgunesoglu/Gmg_English.git",
-    "accountId": "f71083b8-554e-4d96-872b-6c870b6e98fd"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/gmgunesoglu/Gmg_English.git&quot;,
+    &quot;accountId&quot;: &quot;f71083b8-554e-4d96-872b-6c870b6e98fd&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 1
 }</component>
@@ -49,19 +45,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.listener.executor": "Run",
-    "Python.model_app.executor": "Run",
-    "Python.stt.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "reading-checker",
-    "last_opened_file_path": "C:/Users/Gokhan/Projects/Python/Gmg_English/whisper_model",
-    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.listener.executor&quot;: &quot;Run&quot;,
+    &quot;Python.model_app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.stt.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;reading-checker&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Gokhan/Projects/Python/Gmg_English/whisper_model&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Python.stt">
+}</component>
+  <component name="RunManager" selected="Python.listener">
     <configuration name="listener" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="whisper_model" />
       <option name="ENV_FILES" value="" />
@@ -130,8 +126,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.stt" />
         <item itemvalue="Python.listener" />
+        <item itemvalue="Python.stt" />
         <item itemvalue="Python.model_app" />
       </list>
     </recent_temporary>
