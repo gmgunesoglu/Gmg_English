@@ -42,9 +42,9 @@ def send_audio_to_redis():
                 print("Sessizlik algılandı, kuyruğa mesaj eklenmiyor.")
                 time.sleep(0.2)
             else:
-                serialized_data = pickle.dumps({"message": reading_text, "audio_data": audio_data})
+                # serialized_data = pickle.dumps({"message": reading_text, "audio_data": audio_data})
                 redis_client.lpush("reading", serialized_data)
-                print(f"Redis'e gönderildi...\nserialized_data: {serialized_data}")
+                # print(f"Redis'e gönderildi...\nserialized_data: {serialized_data}")
                 time.sleep(0.1)
         else:
             time.sleep(0.5)  # Her 500ms'de bir güncelle
